@@ -462,3 +462,28 @@
         margin: 0 10px;
       }
     }
+
+    /* Animação do Caminhão */
+.animated-truck {
+  position: fixed;
+  bottom: 20%;
+  left: -200px;
+  z-index: 999;
+  transition: transform 0.5s ease-out;
+  will-change: transform;
+  display: none; /* Inicialmente escondido */
+}
+
+.animated-truck img {
+  width: 200px;
+  height: auto;
+  /* filter: drop-shadow(0 0 10px rgba(255, 186, 10, 0.7)); */
+}
+
+/* Mostrar apenas em desktop */
+@media (min-width: 992px) {
+  .animated-truck {
+    display: block;
+  }
+}
+
