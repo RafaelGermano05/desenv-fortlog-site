@@ -32,8 +32,32 @@ $(window).scroll(function() {
 }).scroll();
 
 // Animação do caminhão
+
 function animateTruckOnScroll() {
-  if ($(window).width() >= 992) { // Somente para desktop
+  if ($(window).width() >= 992) {
+    const truck = $('#animated-truck');
+    const floatingTruck = $('.floating-truck');
+    const scrollPosition = $(window).scrollTop();
+    
+    // Só anima o caminhão flutuante se ainda estiver na seção hero
+    if (scrollPosition < $('#about').offset().top) {
+      // Diminui a opacidade do caminhão flutuante conforme scroll
+      const opacity = 1 - (scrollPosition / ($('#about').offset().top * 0.8));
+      floatingTruck.css('opacity', Math.max(opacity, 0));
+      
+      // Aumenta o tamanho do caminhão animado conforme scroll
+      const scale = 1 + (scrollPosition / ($(window).height() * 2));
+      truck.css('transform', `translateX(${truckPosition}px) scale(${Math.min(scale, 1.2)})`);
+    } else {
+      floatingTruck.css('opacity', 0);
+    }
+    
+    // Restante da animação existente...
+  }
+}
+
+function animateTruckOnScroll() {
+  if ($(window).width() >= 992) { 
     const truck = $('#animated-truck');
     const scrollPosition = $(window).scrollTop();
     const windowHeight = $(window).height();

@@ -480,6 +480,40 @@
   /* filter: drop-shadow(0 0 10px rgba(255, 186, 10, 0.7)); */
 }
 
+/* Caminhão flutuante na hero section */
+.floating-truck {
+  position: relative;
+  animation: float 6s ease-in-out infinite;
+  transform-origin: center;
+  perspective: 1000px;
+}
+
+.floating-truck img {
+  max-width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 20px rgba(255, 186, 10, 0.4));
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) rotateY(0deg);
+  }
+  50% {
+    transform: translateY(-20px) rotateY(5deg);
+  }
+}
+
+/* Ajuste a margem do título para não colidir com o caminhão */
+@media (min-width: 992px) {
+  .hero-title {
+    margin-right: 20px;
+  }
+}
+
+.floating-truck {
+  transition: opacity 0.5s ease-out;
+}
+
 /* Mostrar apenas em desktop */
 @media (min-width: 992px) {
   .animated-truck {
