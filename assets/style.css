@@ -171,7 +171,81 @@
       margin-bottom: 1.5rem;
     }
     
-    .counter-section {
+    /* Counter Section - Layout Ajustado */
+.counter-section {
+  background-color: var(--dark-gray);
+  color: var(--white);
+  padding: 5rem 0;
+  overflow: hidden; /* Previne vazamentos */
+}
+
+.counter-section .row {
+  justify-content: center;
+  row-gap: 2rem; /* Espaço vertical entre linhas */
+}
+
+.counter-item {
+  text-align: center;
+  padding: 1.5rem;
+  min-width: 200px; /* Largura mínima para cada item */
+}
+
+.counter-number {
+  font-size: 2.5rem; /* Reduzi um pouco o tamanho */
+  font-weight: 700;
+  color: var(--yellow);
+  margin-bottom: 0.5rem;
+  line-height: 1.2; /* Melhora o espaçamento */
+  display: inline-block; /* Melhor controle */
+}
+
+.counter-text {
+  font-size: 1rem; /* Reduzi o tamanho */
+  line-height: 1.4;
+  max-width: 150px; /* Limita a largura do texto */
+  margin: 0 auto; /* Centraliza */
+}
+
+/* Ajustes para telas médias */
+@media (max-width: 992px) {
+  .counter-item {
+    min-width: 160px;
+    padding: 1rem;
+  }
+  
+  .counter-number {
+    font-size: 2rem;
+  }
+  
+  .counter-text {
+    font-size: 0.9rem;
+    max-width: 130px;
+  }
+}
+
+/* Ajustes para mobile */
+@media (max-width: 768px) {
+  .counter-section .col-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  
+  .counter-item {
+    min-width: auto;
+    padding: 0.5rem;
+  }
+  
+  .counter-number {
+    font-size: 1.8rem;
+  }
+  
+  .counter-text {
+    font-size: 0.8rem;
+    max-width: 100px;
+  }
+}
+
+    /* .counter-section {
       background-color: var(--dark-gray);
       color: var(--white);
       padding: 5rem 0;
@@ -191,7 +265,7 @@
     
     .counter-text {
       font-size: 1.2rem;
-    }
+    } */
     
     .partners-slider {
       overflow: hidden;
