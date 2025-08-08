@@ -102,7 +102,7 @@
     .hero-section {
       height: 100vh;
       min-height: 600px;
-      background: linear-gradient(rgba(74, 74, 76, 0.9), rgba(74, 74, 76, 0.8)),
+      background: linear-gradient(rgba(74, 74, 76, 0.298), rgba(74, 74, 76, 0.229)),
                   url('DSC05161-1024x681\ \(1\).jpg') no-repeat center center/cover;
       display: flex;
       align-items: center;
@@ -170,8 +170,168 @@
       color: var(--yellow);
       margin-bottom: 1.5rem;
     }
+
+  /* Estilos para a nova seção de diferenciais */
+/* Estilos para a seção de diferenciais */
+#diferenciais {
+  background-color: #f8f9fa;
+}
+
+.feature-icon-bg {
+
+  width: 50px;
+  height: 55px;
+  border-radius: 50%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.feature-icon {
+  color: var(--yellow);
+  font-size: 2.2rem;
+  
+}
+
+#diferenciais i {
+  color: var(--medium-gray);
+  font-size: 2.2rem;
+  
+}
+
+#diferenciais h3 {
+  color: var(--dark-gray);
+  font-weight: 600;
+  font-size: 1.4rem;
+}
+
+#diferenciais p {
+  color: var(--medium-gray);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Layout Responsivo */
+@media (max-width: 767.98px) {
+  #diferenciais .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .feature-icon-bg {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .feature-icon {
+    font-size: 1.2rem;
+  }
+  
+  #diferenciais h3 {
+    font-size: 1.2rem;
+  }
+  
+  #diferenciais p {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  #diferenciais .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+.btn-yellow-sm {
+  background-color: var(--yellow);
+  color: var(--dark-gray);
+  font-weight: 600;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+  display: inline-block;
+}
+
+.btn-yellow-sm:hover {
+  background-color: #e6a908;
+  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(255, 186, 10, 0.3);
+  color: var(--dark-gray);
+}
+
+@media (max-width: 768px) {
+  .btn-yellow-sm {
+    padding: 6px 16px;
+    font-size: 0.85rem;
+  }
+}
     
+    
+
     /* Counter Section - Layout Ajustado */
+/* Estilos para a seção de números */
+.counter-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--yellow);
+  margin-bottom: 0.5rem;
+}
+
+.counter-value {
+  display: inline-block;
+  min-width: 60px;
+}
+
+.counter-section {
+  background-color: var(--dark-gray);
+  color: var(--white);
+  padding: 5rem 0;
+}
+
+.counter-item {
+  padding: 1rem;
+}
+
+.counter-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--yellow);
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.counter-number span {
+  display: inline-block;
+  min-width: 60px; /* Espaço para os números */
+}
+
+.counter-text {
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 992px) {
+  .counter-number {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .counter-number {
+    font-size: 1.8rem;
+  }
+  
+  .counter-text {
+    font-size: 0.9rem;
+  }
+}
+
 .counter-section {
   background-color: var(--dark-gray);
   color: var(--white);

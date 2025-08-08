@@ -97,39 +97,54 @@ function duplicatePartners() {
 duplicatePartners();
 
 // Contador de números otimizado
+// Função corrigida para animar os contadores
 function animateCounters() {
-  $('.counter-number').each(function() {
-    var $this = $(this);
-    var countTo = $this.attr('data-count');
-    var duration = 2000;
-    
-    if (isElementInViewport($this[0])) {
-      if (!$this.hasClass('animated')) {
-        $this.addClass('animated');
+  document.querySelectorAll('.counter-value').forEach(counter => {
+    if (isElementInViewport(counter) && !counter.classList.contains('animated')) {
+      counter.classList.add('animated');
+      const countTo = parseInt(counter.getAttribute('data-count'));
+      const duration = 2000;
+      let start = null;
+      
+      const step = (timestamp) => {
+        if (!start) start = timestamp;
+        const progress = Math.min((timestamp - start) / duration, 1);
+        const value = Math.floor(progress * countTo);
         
-        $({ countNum: 0 }).animate({ countNum: countTo }, {
-          duration: duration,
-          easing: 'swing',
-          step: function() {
-            var num = Math.floor(this.countNum);
-            if (countTo > 1000) {
-              $this.text(num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
-            } else {
-              $this.text(num);
-            }
-          },
-          complete: function() {
-            if (countTo > 1000) {
-              $this.text(countTo.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ","));
-            } else {
-              $this.text(countTo);
-            }
-          }
-        });
-      }
+        // Atualiza o valor exibido
+        counter.textContent = formatNumber(value);
+        
+        if (progress < 1) {
+          window.requestAnimationFrame(step);
+        } else {
+          counter.textContent = formatNumber(countTo);
+        }
+      };
+      
+      window.requestAnimationFrame(step);
     }
   });
 }
+
+// Função auxiliar para formatar números
+function formatNumber(num) {
+  return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
+// Função para verificar se elemento está visível
+function isElementInViewport(el) {
+  const rect = el.getBoundingClientRect();
+  return (
+    rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
+    rect.bottom >= 0
+  );
+}
+
+// Inicializa os contadores quando a página carrega
+document.addEventListener('DOMContentLoaded', function() {
+  animateCounters();
+  window.addEventListener('scroll', animateCounters);
+});
 
 // Verifica se o elemento está visível na viewport
 function isElementInViewport(el) {
