@@ -171,6 +171,166 @@
       margin-bottom: 1.5rem;
     }
 
+#about {
+      background-color: var(--white);
+      overflow: hidden;
+      padding: 100px 0;
+      position: relative;
+    }
+    
+    .fortitude-header {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+    
+    .fortitude-title {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--dark-gray);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    
+    .fortitude-title span {
+      color: var(--yellow);
+      position: relative;
+    }
+    
+    .fortitude-subtitle {
+      font-size: 1.2rem;
+      color: var(--medium-gray);
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .pillar-card {
+      background: var(--white);
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s ease;
+      height: 100%;
+      border-top: 5px solid var(--yellow);
+      position: relative;
+    }
+    
+    .pillar-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    }
+    
+    .pillar-icon {
+      width: 70px;
+      height: 70px;
+      background-color: rgba(255, 186, 10, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: var(--yellow);
+    }
+    
+    .pillar-number {
+      position: absolute;
+      top: -15px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      background-color: var(--dark-gray);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    
+    .pillar-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--dark-gray);
+      margin-bottom: 15px;
+    }
+    
+    .pillar-description {
+      color: var(--medium-gray);
+      line-height: 1.6;
+    }
+    
+    .fortitude-highlight {
+      background: linear-gradient(135deg, var(--yellow) 0%, #ffcb45 100%);
+      border-radius: 20px;
+      padding: 40px;
+      color: var(--dark-gray);
+      margin-top: 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .fortitude-highlight:before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 100%;
+      height: 200%;
+      background: rgba(255, 255, 255, 0.1);
+      transform: rotate(45deg);
+    }
+    
+    .highlight-text {
+      font-size: 1.3rem;
+      font-weight: 600;
+      text-align: center;
+      margin: 0;
+      position: relative;
+      z-index: 2;
+    }
+    
+    /* Responsividade */
+    @media (max-width: 992px) {
+      .fortitude-title {
+        font-size: 2.2rem;
+      }
+      
+      .pillar-card {
+        padding: 25px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .fortitude-title {
+        font-size: 1.8rem;
+      }
+      
+      .fortitude-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .pillar-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+      }
+      
+      .pillar-title {
+        font-size: 1.2rem;
+      }
+      
+      .fortitude-highlight {
+        padding: 30px 20px;
+      }
+      
+      .highlight-text {
+        font-size: 1.1rem;
+      }
+    }
+
   /* Estilos para a nova seção de diferenciais */
 /* Estilos para a seção de diferenciais */
 #diferenciais {
