@@ -11,218 +11,41 @@
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
   <link rel="shortcut icon" href="cropped-cropped-logo_fortlog_horizontal-192x192.png" type="image/x-icon">
-  
-  <!-- CSS crítico inline -->
-  
+  <link rel="stylesheet" href="assets/style.css">
+
   <style>
-    :root {
-      --yellow: #ffba0a;
-      --dark-gray: #3e3e41;
-      --medium-gray: #5e5e63;
-      --light-gray: #e0e0e0;
-      --white: #ffffff;
-    }
-    
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: var(--dark-gray);
-      overflow-x: hidden;
-      background-color: #4a4a52;
-    }
-    
-    /* Container do caminhão animado */
-    .truck-animation-container {
-      position: fixed;
-      bottom: 0.5%;
-      left: 0;
-      width: 100%;
-      height: 130px;
-      z-index: 100;
-      pointer-events: none;
-      overflow: auto;
-      display: none; /* Escondido por padrão */
-    }
-    
-    @media (min-width: 992px) {
-      .truck-animation-container {
-        display: block;
-      }
-    }
-    
-    .animated-truck {
-      position: absolute;
-      left: -200px;
-      width: 200px;
-      height: auto;
-      transition: transform 0.5s ease-out;
-      will-change: transform;
-      filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
-    }
-    
-    /* Hero Section */
-    /* Hero Section - Corrigido */
-    .hero-section {
-      height: 110vh;
-      min-height: 600px;
-      background: linear-gradient(rgba(74, 74, 76, 0.308), rgba(74, 74, 76, 0.17)),
-                  url('DSC05161-1024x681\ \(1\).jpg') no-repeat center center/cover;
-      display: flex;
-      align-items: center;
-      padding-top: 70px;
-      color: var(--white);
+    .hero-section{
+      background: linear-gradient(rgba(74, 74, 76, 0.828), rgba(74, 74, 76, 0.946)),
+                  url('img/interior-de-grande-armazem-de-distribuicao-com-prateleiras-repletas-de-paletas-e-produtos-prontos-para-o-mercado.jpg') no-repeat center center/cover;
     }
 
     #diferenciais {
-    background: linear-gradient(rgba(255, 217, 0, 0.877), rgb(255, 217, 0)),
-                  url('025dafe5-27c0-4185-8d05-c0ac83fa839e.jpeg') no-repeat center center/cover;
-    }
-
-    #about{
-      border-radius: 25% 25% 0 0/60px 60px 0 0 ;
-      background-color: var(--white);
-      overflow: hidden;
-      padding-top: 100px;
-      margin-top: -60px;
-
-      z-index: 1;
-    }
-    
-    #services{
-      color: var(--dark-gray);
-      background-color: var(--light-gray);
-      border-radius: 25% 25% 0 0/60px 60px 0 0 ;
-      overflow: hidden;
-      margin-top: -60px;
-      padding-top: 100px;
-      z-index: 1;
-    }
-
-    .testimonial-section{
-      padding-bottom: 120px;
-      border-radius: 25% 25% 0 0/60px 60px 0 0 ;
-      background-color: var(--light-gray);
-      overflow: hidden;
-      margin-top: -60px;
-      padding-top: 100px;
-      z-index: 1;
-    }
-
-    .testimonial-card{
-      background-color: var(--dark-gray);
-      color: var(--white);
-    }
-
-    #contact{
-      color: var(--dark-gray);
-      background-color: var(--white);
-      border-radius: 25% 25% 0 0/60px 60px 0 0 ;
-      background-color: var(--white);
-      overflow: hidden;
-      margin-top: -60px;
-      padding-top: 100px;
-      z-index: 1;
-    }
-
-/* position: relative;
-  border-radius: 0 0 50% 50%/0 0 100px 100px;
-  overflow: hidden;
-  margin-bottom: -50px;
-  padding-bottom: 100px;
-  z-index: 1; */
-
-    .hero-title {
-      font-size: 3.5rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
-    }
-    
-    .hero-subtitle {
-      font-size: 1.5rem;
-      margin-bottom: 2.5rem;
-    }
-    
-    /* Botões */
-    .btn-yellow {
-      background-color: var(--yellow);
-      color: var(--dark-gray);
-      font-weight: bold;
-      border: none;
-      padding: 12px 30px;
-      border-radius: 30px;
-      transition: all 0.3s;
-    }
-    
-    .btn-yellow:hover {
-      background-color: #e6a908;
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(255, 186, 10, 0.3);
-    }
-    
-    .btn-outline-yellow {
-      border: 2px solid var(--yellow);
-      color: var(--yellow);
-      background-color: transparent;
-      font-weight: bold;
-      padding: 10px 28px;
-      border-radius: 30px;
-      transition: all 0.3s;
-    }
-    
-    /* Caminhão flutuante */
-    .floating-truck {
-      position: relative;
-      animation: float 6s ease-in-out infinite;
-      transform-origin: center;
-      perspective: 1000px;
-    }
-    
-    .floating-truck img {
-      max-width: 100%;
-      height: auto;
-      filter: drop-shadow(0 10px 20px rgba(255, 186, 10, 0.4));
-    }
-    
-    @keyframes float {
-      0%, 100% { transform: translateY(0) rotateY(0deg); }
-      50% { transform: translateY(-20px) rotateY(5deg); }
-    }
-    
-    /* Responsividade */
-    @media (max-width: 1200px) {
-      .hero-title { font-size: 3rem; }
-      .hero-subtitle { font-size: 1.3rem; }
-    }
-    
-    @media (max-width: 992px) {
-      .hero-title { font-size: 2.5rem; }
-      .hero-subtitle { font-size: 1.2rem; }
-    }
-    
-    @media (max-width: 768px) {
-      .hero-title { font-size: 2rem; }
-      .hero-subtitle { font-size: 1.1rem; }
-    }
-    
-    @media (max-width: 576px) {
-      .hero-title { font-size: 1.8rem; }
-      .hero-subtitle { font-size: 1rem; }
+      background: linear-gradient(rgba(255, 217, 0, 0.877), rgb(255, 217, 0)),
+                  url('img/025dafe5-27c0-4185-8d05-c0ac83fa839e.jpeg') no-repeat center center/cover;
     }
   </style>
+  
 </head>
 <body>
+  <!-- Botão WhatsApp Fixo -->
+  <a href="https://wa.me/5585999064348" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
   <!-- Container do caminhão animado -->
   <div class="truck-animation-container">
-    <img src="Copilot_20250808_104752.png" alt="Caminhão FORTLOG" class="animated-truck" id="truck-animation" style="width: 120px;">
+    <img src="img/Copilot_20250808_104752.png" alt="Caminhão FORTLOG" class="animated-truck" id="truck-animation" style="width: 120px;">
   </div>
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
       <a class="navbar-brand" href="#home">
-        <img src="cropped-fortlog-horizontal-fort-branco-768x242.png" alt="FORTLOG Logo" width="150" height="auto" loading="lazy">
+        <img src="img/cropped-fortlog-horizontal-fort-branco-768x242.png" alt="FORTLOG Logo" width="150" height="auto" loading="lazy">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
@@ -250,27 +73,25 @@
   </nav>
 
   <!-- Hero Section -->
-  <!-- Hero Section -->
-<section class="hero-section" id="home" style="background: linear-gradient(rgba(74, 74, 76, 0.828), rgba(74, 74, 76, 0.946)),
-                  url('DSC05161-1024x681\ \(1\).jpg') no-repeat center center/cover;">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-7" data-aos="fade-right">
-        <h1 class="hero-title">CONECTAMOS SEU PRODUTO AO DESTINO CERTO</h1>
-        <p class="hero-subtitle">Com a agilidade que o mercado exige e a excelência que você merece.</p>
-        <div class="d-flex flex-wrap">
-          <a href="#contact" class="btn btn-yellow me-2 mb-2">Fale Conosco</a>
-          <a href="#about" class="btn btn-outline-yellow mb-2">Nossa História</a>
+  <section class="hero-section" id="home">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7" data-aos="fade-right">
+          <h1 class="hero-title">LOGÍSTICA NA VELOCIDADE DO SEU NEGÓCIO</h1>
+          <p class="hero-subtitle">Conectamos seu produto ao destino certo, com a agilidade que o mercado exige e a excelência que você merece.</p>
+          <div class="d-flex flex-wrap">
+            <a href="#contact" class="btn btn-yellow me-2 mb-2">Fale Conosco</a>
+            <a href="#about" class="btn btn-outline-yellow mb-2">Nossa História</a>
+          </div>
         </div>
-      </div>
-      <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left">
-        <div class="floating-truck">
-          <img src="Copilot_20250808_110153.png" alt="Caminhão FORTLOG" class="img-fluid" loading="lazy" width="350">
+        <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left">
+          <div class="floating-truck">
+            <img src="img/Copilot_20250808_110153.png" alt="Caminhão FORTLOG" class="img-fluid" loading="lazy" width="350">
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- About Section -->
   <section class="py-5" id="about">
@@ -326,149 +147,89 @@
           </div>
         </div>
       </div>
-    </section>
-      
-
-  <section class="py-5" id="services">
-    <div class="container py-5">
-    <div class="section-title" data-aos="fade-up">
-      <h2>NOSSOS SERVIÇOS</h2>
     </div>
-    
-    <div class="row">
-      <!-- Diferencial 1 -->
-      <div class="col-md-6 col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="100">
-        <div class="d-flex align-items-start h-100">
-          <div class="feature-icon-bg me-4">
-            <i class="fas fa-truck-fast feature-icon"></i>
-          </div>
-          <div>
-            <h3 class="mb-3">Entregas Dedicadas em Todo o Ceará</h3>
-            <p class="mb-3">Com frota própria e rastreamento em tempo real, garantimos agilidade, segurança e comprometimento em cada rota. Seu produto vai onde precisar com prioridade máxima.</p>
-            <a href="#contact" class="btn btn-yellow-sm">Fale Conosco</a>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Diferencial 2 -->
-      <div class="col-md-6 col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="200">
-        <div class="d-flex align-items-start h-100">
-          <div class="feature-icon-bg me-4">
-            <i class="fas fa-rotate-left feature-icon"></i>
-          </div>
-          <div>
-            <h3 class="mb-3">Logística Reversa</h3>
-            <p class="mb-3">Transformamos o retorno de produtos em vantagem competitiva. Gestão eficiente de devoluções, com controle, agilidade e custo otimizado.</p>
-            <a href="#contact" class="btn btn-yellow-sm">Fale Conosco</a>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Diferencial 3 -->
-      <div class="col-md-6 col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="300">
-        <div class="d-flex align-items-start h-100">
-          <div class="feature-icon-bg me-4">
-            <i class="fas fa-plane feature-icon"></i>
-          </div>
-          <div>
-            <h3 class="mb-3">Cargas Aéreas</h3>
-            <p class="mb-3">Para quando o tempo é o maior ativo: soluções aéreas rápidas e confiáveis, com cobertura nacional e total cuidado com a sua carga.</p>
-            <a href="#contact" class="btn btn-yellow-sm">Fale Conosco</a>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Diferencial 4 -->
-      <div class="col-md-6 col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="400">
-        <div class="d-flex align-items-start h-100">
-          <div class="feature-icon-bg me-4">
-            <i class="fas fa-warehouse feature-icon"></i>
-          </div>
-          <div>
-            <h3 class="mb-3">Armazenagem Inteligente</h3>
-            <p class="mb-3">Estrutura com capacidade para até 1.200 pallets, controle de estoque em tempo real e gestão sob demanda. Eficiência, organização e espaço sob medida para o seu negócio.</p>
-            <a href="#contact" class="btn btn-yellow-sm">Fale Conosco</a>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Diferencial 5 -->
-      <div class="col-md-6 col-lg-6 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="500">
-        <div class="d-flex align-items-start h-100">
-          <div class="feature-icon-bg me-4">
-            <i class="fas fa-exchange-alt feature-icon"></i>
-          </div>
-          <div>
-            <h3 class="mb-3">Cross Docking</h3>
-            <p class="mb-3">Receba, separe e entregue sem perder tempo. Integramos sua cadeia de suprimentos com agilidade e redução de custos logísticos.</p>
-            <a href="#contact" class="btn btn-yellow-sm">Fale Conosco</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
   </section>
 
-  <!-- Features Section -->
-
-  <!-- Features Section - Versão com Botões -->
-<!-- Features Section - Layout Responsivo -->
-
-  
-  <!-- <section class="py-5 bg-light-gray">
+  <!-- Services Section -->
+  <section class="py-5" id="services">
     <div class="container py-5">
       <div class="section-title" data-aos="fade-up">
-        <h2>NOSSOS DIFERENCIAIS</h2>
+        <h2>NOSSOS SERVIÇOS</h2>
       </div>
-      <div class="row g-4">
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-map-marked-alt"></i>
+      
+      <div class="row">
+        <!-- Serviço 1 -->
+        <div class="col-md-6 col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="100">
+          <div class="d-flex align-items-start h-100">
+            <div class="feature-icon-bg me-4">
+              <i class="fas fa-truck-fast feature-icon"></i>
             </div>
-            <h3>Conhecimento completo do Ceará</h3>
-            <p>Conhecemos cada rota, cada necessidade local e cada desafio logístico da região.</p>
+            <div>
+              <h3 class="mb-3">Entregas Dedicadas em Todo o Ceará</h3>
+              <p class="mb-3">Com frota própria e rastreamento em tempo real, garantimos agilidade, segurança e comprometimento em cada rota. Seu produto vai onde precisar com prioridade máxima.</p>
+              <a href="#contact" class="btn btn-yellow-sm">Fale Conosco</a>
+            </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-clock"></i>
+        
+        <!-- Serviço 2 -->
+        <div class="col-md-6 col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="200">
+          <div class="d-flex align-items-start h-100">
+            <div class="feature-icon-bg me-4">
+              <i class="fas fa-rotate-left feature-icon"></i>
             </div>
-            <h3>Gestão em Tempo Real</h3>
-            <p>Rastreamento, controle de estoque e performance sempre na palma da mão.</p>
+            <div>
+              <h3 class="mb-3">Logística Reversa</h3>
+              <p class="mb-3">Transformamos o retorno de produtos em vantagem competitiva. Gestão eficiente de devoluções, com controle, agilidade e custo otimizado.</p>
+              <a href="#contact" class="btn btn-yellow-sm">Fale Conosco</a>
+            </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-headset"></i>
+        
+        <!-- Serviço 3 -->
+        <div class="col-md-6 col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="300">
+          <div class="d-flex align-items-start h-100">
+            <div class="feature-icon-bg me-4">
+              <i class="fas fa-plane feature-icon"></i>
             </div>
-            <h3>Atendimento Consultivo</h3>
-            <p>Você não fala com um atendente, você fala com um especialista.</p>
+            <div>
+              <h3 class="mb-3">Cargas Aéreas</h3>
+              <p class="mb-3">Para quando o tempo é o maior ativo: soluções aéreas rápidas e confiáveis, com cobertura nacional e total cuidado com a sua carga.</p>
+              <a href="#contact" class="btn btn-yellow-sm">Fale Conosco</a>
+            </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-truck-fast"></i>
+        
+        <!-- Serviço 4 -->
+        <div class="col-md-6 col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="400">
+          <div class="d-flex align-items-start h-100">
+            <div class="feature-icon-bg me-4">
+              <i class="fas fa-warehouse feature-icon"></i>
             </div>
-            <h3>Agilidade e Comprometimento</h3>
-            <p>Atraso não faz parte do nosso vocabulário. Aqui, o tempo do cliente é lei.</p>
+            <div>
+              <h3 class="mb-3">Armazenagem Inteligente</h3>
+              <p class="mb-3">Estrutura com capacidade para até 1.200 pallets, controle de estoque em tempo real e gestão sob demanda. Eficiência, organização e espaço sob medida para o seu negócio.</p>
+              <a href="#contact" class="btn btn-yellow-sm">Fale Conosco</a>
+            </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="feature-card">
-            <div class="feature-icon">
-              <i class="fas fa-warehouse"></i>
+        
+        <!-- Serviço 5 -->
+        <div class="col-md-6 col-lg-6 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="500">
+          <div class="d-flex align-items-start h-100">
+            <div class="feature-icon-bg me-4">
+              <i class="fas fa-exchange-alt feature-icon"></i>
             </div>
-            <h3>Estrutura Completa e Escalável</h3>
-            <p>Capacidade para crescer com você. Hoje, amanhã e no futuro.</p>
+            <div>
+              <h3 class="mb-3">Cross Docking</h3>
+              <p class="mb-3">Receba, separe e entregue sem perder tempo. Integramos sua cadeia de suprimentos com agilidade e redução de custos logísticos.</p>
+              <a href="#contact" class="btn btn-yellow-sm">Fale Conosco</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </section> -->
+  </section>
 
   <!-- Counter Section -->
   <section class="counter-section" id="numbers">
@@ -516,94 +277,93 @@
     <div class="container py-4">
       <div class="partners-slider">
         <div class="partners-track">
-          <img src="cropped-fortlog-horizontal-fort-branco-768x242.png" class="partner-logo" alt="Parceiro 1" loading="lazy">
-          <img src="kabum-logo-1.png" class="partner-logo" alt="Parceiro 2" loading="lazy">
-          <img src="LOGO-ELSYS-2020_colorido_RGB-web.png" class="partner-logo" alt="Parceiro 3" loading="lazy">
-          <img src="magalu-logo-1.png" class="partner-logo" alt="Parceiro 4" loading="lazy">
-          <img src="LOGO_FORTSUN_PDF.1.png" class="partner-logo" alt="Parceiro 5" loading="lazy">
-          <img src="mercado-pago-logo-8.png" class="partner-logo" alt="Parceiro 6" loading="lazy">
-          <img src="fortsat-bolota.png" class="partner-logo" alt="Parceiro 7" loading="lazy">
+          <img src="img/parceiras/logo-brasinet.png" class="partner-logo" alt="Parceiro 1" loading="lazy">
+          <img src="img/parceiras/LOGO-ELSYS-2020_colorido_RGB-web.png" class="partner-logo" alt="Parceiro 2" loading="lazy">
+          <img src="img/parceiras/logo_jadlog.png" class="partner-logo" alt="Parceiro 3" loading="lazy">
+          <img src="img/parceiras/logo_hughesnet.png" class="partner-logo" alt="Parceiro 4" loading="lazy">
+          <img src="img/parceiras/conecta-cargo-logo.png" class="partner-logo" alt="Parceiro 5" loading="lazy">
+          <img src="img/parceiras/rta-logo.svg" class="partner-logo" alt="Parceiro 6" loading="lazy">
+          <img src="img/LOGO_FORTSUN_PDF.1.png" class="partner-logo" alt="Parceiro 7" loading="lazy">
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Services Section -->
-  
+  <!-- Features Section -->
   <section class="py-5 bg-light-gray" id="diferenciais">
-  <div class="container py-5">
-    <div class="section-title" data-aos="fade-up">
-      <h2>NOSSOS DIFERENCIAIS</h2>
+    <div class="container py-5">
+      <div class="section-title" data-aos="fade-up">
+        <h2>NOSSOS DIFERENCIAIS</h2>
+      </div>
+      
+      <div class="row">
+        <!-- Diferencial 1 -->
+        <div class="col-md-6 col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="100">
+          <div class="d-flex align-items-start h-100">
+            <div class="feature-icon-bg me-4">
+              <i class="fas fa-map-marked-alt feature-icon"></i>
+            </div>
+            <div>
+              <h3 class="mb-3">Conhecimento completo do Ceará</h3>
+              <p class="mb-3">Conhecemos cada rota, cada necessidade local e cada desafio logístico da região.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Diferencial 2 -->
+        <div class="col-md-6 col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="200">
+          <div class="d-flex align-items-start h-100">
+            <div class="feature-icon-bg me-4">
+              <i class="fas fa-clock feature-icon"></i>
+            </div>
+            <div>
+              <h3 class="mb-3">Gestão em Tempo Real</h3>
+              <p class="mb-3">Rastreamento, controle de estoque e performance sempre na palma da mão.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Diferencial 3 -->
+        <div class="col-md-6 col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="300">
+          <div class="d-flex align-items-start h-100">
+            <div class="feature-icon-bg me-4">
+              <i class="fas fa-headset feature-icon"></i>
+            </div>
+            <div>
+              <h3 class="mb-3">Atendimento Consultivo</h3>
+              <p class="mb-3">Você não fala com um atendente, você fala com um especialista.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Diferencial 4 -->
+        <div class="col-md-6 col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="400">
+          <div class="d-flex align-items-start h-100">
+            <div class="feature-icon-bg me-4">
+              <i class="fas fa-truck-fast feature-icon"></i>
+            </div>
+            <div>
+              <h3 class="mb-3">Agilidade e Comprometimento</h3>
+              <p class="mb-3">Atraso não faz parte do nosso vocabulário. Aqui, o tempo do cliente é lei.</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Diferencial 5 -->
+        <div class="col-md-6 col-lg-6 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="500">
+          <div class="d-flex align-items-start h-100">
+            <div class="feature-icon-bg me-4">
+              <i class="fas fa-warehouse feature-icon"></i>
+            </div>
+            <div>
+              <h3 class="mb-3">Estrutura Completa e Escalável</h3>
+              <p class="mb-3">Capacidade para crescer com você. Hoje, amanhã e no futuro.</p>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    
-    <div class="row">
-      <!-- Diferencial 1 -->
-      <div class="col-md-6 col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="100">
-        <div class="d-flex align-items-start h-100">
-          <div class="feature-icon-bg me-4">
-            <i class="fas fa-map-marked-alt feature-icon"></i>
-          </div>
-          <div>
-            <h3 class="mb-3">Conhecimento completo do Ceará</h3>
-            <p class="mb-3">Conhecemos cada rota, cada necessidade local e cada desafio logístico da região.</p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Diferencial 2 -->
-      <div class="col-md-6 col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="200">
-        <div class="d-flex align-items-start h-100">
-          <div class="feature-icon-bg me-4">
-            <i class="fas fa-clock feature-icon"></i>
-          </div>
-          <div>
-            <h3 class="mb-3">Gestão em Tempo Real</h3>
-            <p class="mb-3">Rastreamento, controle de estoque e performance sempre na palma da mão.</p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Diferencial 3 -->
-      <div class="col-md-6 col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="300">
-        <div class="d-flex align-items-start h-100">
-          <div class="feature-icon-bg me-4">
-            <i class="fas fa-headset feature-icon"></i>
-          </div>
-          <div>
-            <h3 class="mb-3">Atendimento Consultivo</h3>
-            <p class="mb-3">Você não fala com um atendente, você fala com um especialista.</p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Diferencial 4 -->
-      <div class="col-md-6 col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="400">
-        <div class="d-flex align-items-start h-100">
-          <div class="feature-icon-bg me-4">
-            <i class="fas fa-truck-fast feature-icon"></i>
-          </div>
-          <div>
-            <h3 class="mb-3">Agilidade e Comprometimento</h3>
-            <p class="mb-3">Atraso não faz parte do nosso vocabulário. Aqui, o tempo do cliente é lei.</p>
-          </div>
-        </div>
-      </div>
-      
-      <!-- Diferencial 5 -->
-      <div class="col-md-6 col-lg-6 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="500">
-        <div class="d-flex align-items-start h-100">
-          <div class="feature-icon-bg me-4">
-            <i class="fas fa-warehouse feature-icon"></i>
-          </div>
-          <div>
-            <h3 class="mb-3">Estrutura Completa e Escalável</h3>
-            <p class="mb-3">Capacidade para crescer com você. Hoje, amanhã e no futuro.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
   <!-- Testimonial Section -->
   <section class="testimonial-section">
@@ -684,7 +444,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-4 mb-4 mb-lg-0">
-          <img src="cropped-fortlog-horizontal-fort-branco-768x242.png" alt="FORTLOG Logo" class="footer-logo" loading="lazy">
+          <img src="img/cropped-fortlog-horizontal-fort-branco-768x242.png" alt="FORTLOG Logo" class="footer-logo" loading="lazy">
           <p class="mt-3">Conectamos seu produto ao destino certo, com a agilidade que o mercado exige e a excelência que você merece.</p>
           <div class="social-icons mt-3">
             <a href="https://instagram.com/fortlogbrasil" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
@@ -736,166 +496,11 @@
   </footer>
 
   <!-- Scripts otimizados -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   
   <!-- JavaScript principal -->
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      // Inicializa AOS
-      AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: true
-      });
-
-      // Suaviza rolagem para links internos
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            window.scrollTo({
-              top: target.offsetTop - 70,
-              behavior: 'smooth'
-            });
-          }
-        });
-      });
-
-      // Animação do caminhão com scroll
-      function animateTruck() {
-        if (window.innerWidth >= 992) {
-          const truck = document.getElementById('truck-animation');
-          if (!truck) return;
-          
-          const scrollPosition = window.scrollY;
-          const documentHeight = document.body.scrollHeight - window.innerHeight;
-          const scrollPercentage = scrollPosition / documentHeight;
-          
-          // Posição horizontal baseada no scroll (limitada para não ultrapassar a tela)
-          const truckPosition = Math.min(scrollPercentage * (window.innerWidth + 200), window.innerWidth - 100);
-          
-          // Movimento suave da esquerda para a direita
-          truck.style.transform = `translateX(${truckPosition}px)`;
-          
-          // Efeito de tremor na seção de serviços
-          const servicesSection = document.getElementById('services');
-          if (servicesSection) {
-            const servicesTop = servicesSection.offsetTop;
-            const servicesHeight = servicesSection.offsetHeight;
-            
-            if (scrollPosition > servicesTop - window.innerHeight/2 && 
-                scrollPosition < servicesTop + servicesHeight - window.innerHeight/3) {
-              truck.style.animation = 'truckShake 0.5s infinite alternate';
-            } else {
-              truck.style.animation = 'none';
-            }
-          }
-        }
-      }
-
-      // Adiciona a animação de shake no CSS
-      const style = document.createElement('style');
-      style.textContent = `
-        @keyframes truckShake {
-          0% { transform: translateX(var(--truck-x)) translateY(0); }
-          25% { transform: translateX(calc(var(--truck-x) - 5px)) translateY(-2px); }
-          50% { transform: translateX(calc(var(--truck-x) + 5px)) translateY(2px); }
-          75% { transform: translateX(calc(var(--truck-x) - 5px)) translateY(-2px); }
-          100% { transform: translateX(calc(var(--truck-x) + 5px)) translateY(2px); }
-        }
-      `;
-      document.head.appendChild(style);
-
-      // Evento de scroll
-      window.addEventListener('scroll', animateTruck);
-      
-      // Inicia o caminhão fora da tela (somente desktop)
-      if (window.innerWidth >= 992) {
-        const truck = document.getElementById('truck-animation');
-        if (truck) {
-          setTimeout(() => {
-            truck.style.transition = 'transform 2s ease-out';
-            truck.style.transform = 'translateX(0)';
-            
-            setTimeout(() => {
-              truck.style.transition = 'transform 0.5s ease-out';
-            }, 2000);
-          }, 500);
-        }
-      }
-
-      // Animação dos contadores
-      function animateCounters() {
-        document.querySelectorAll('.counter-number').forEach(counter => {
-          if (isElementInViewport(counter) && !counter.classList.contains('animated')) {
-            counter.classList.add('animated');
-            const countTo = parseInt(counter.getAttribute('data-count'));
-            const duration = 2000;
-            let start = null;
-            
-            const step = (timestamp) => {
-              if (!start) start = timestamp;
-              const progress = Math.min((timestamp - start) / duration, 1);
-              const value = Math.floor(progress * countTo);
-              
-              if (countTo > 1000) {
-                counter.textContent = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-              } else {
-                counter.textContent = value;
-              }
-              
-              if (progress < 1) {
-                window.requestAnimationFrame(step);
-              } else {
-                if (countTo > 1000) {
-                  counter.textContent = countTo.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                } else {
-                  counter.textContent = countTo;
-                }
-              }
-            };
-            
-            window.requestAnimationFrame(step);
-          }
-        });
-      }
-
-      function isElementInViewport(el) {
-        const rect = el.getBoundingClientRect();
-        return (
-          rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
-          rect.bottom >= 0
-        );
-      }
-
-      // Slider de parceiros automático
-      function initPartnersSlider() {
-        const track = document.querySelector('.partners-track');
-        if (track) {
-          // Duplica os logos para criar efeito contínuo
-          track.innerHTML += track.innerHTML;
-          
-          let position = 0;
-          const speed = 1;
-          const animate = () => {
-            position -= speed;
-            if (position <= -track.scrollWidth / 2) {
-              position = 0;
-            }
-            track.style.transform = `translateX(${position}px)`;
-            requestAnimationFrame(animate);
-          };
-          animate();
-        }
-      }
-
-      window.addEventListener('scroll', animateCounters);
-      animateCounters(); // Executa uma vez ao carregar
-      initPartnersSlider();
-    });
-  </script>
+  <script src="assets/script.js"></script>
 </body>
 </html>

@@ -6,28 +6,163 @@
       --white: #ffffff;
     }
     
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       color: var(--dark-gray);
       overflow-x: hidden;
+      background-color: #4a4a52;
+      line-height: 1.6;
     }
     
-    .bg-dark-gray {
-      background-color: var(--dark-gray);
+    /* Botão WhatsApp Fixo */
+    .whatsapp-float {
+      position: fixed;
+      width: 60px;
+      height: 60px;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25d366;
+      color: var(--white);
+      border-radius: 50px;
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.25);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.4s;
+      animation: pulse 2s infinite;
     }
     
-    .bg-medium-gray {
-      background-color: var(--medium-gray);
+    .whatsapp-float:hover {
+      background-color: #128C7E;
+      transform: scale(1.05);
+      text-decoration: none;
+      color: var(--white);
     }
     
-    .bg-light-gray {
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+      }
+      70% {
+        box-shadow: 0 0 0 10px rgba(37, 211, 102, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+      }
+    }
+    
+    /* Container do caminhão animado */
+    .truck-animation-container {
+      position: fixed;
+      bottom: 0.5%;
+      left: 0;
+      width: 100%;
+      height: 130px;
+      z-index: 100;
+      pointer-events: none;
+      overflow: auto;
+      display: none;
+    }
+    
+    @media (min-width: 992px) {
+      .truck-animation-container {
+        display: block;
+      }
+    }
+    
+    .animated-truck {
+      position: absolute;
+      left: -200px;
+      width: 200px;
+      height: auto;
+      transition: transform 0.5s ease-out;
+      will-change: transform;
+      filter: drop-shadow(0 2px 5px rgba(0,0,0,0.3));
+    }
+    
+    /* Hero Section */
+    .hero-section {
+      height: 110vh;
+      min-height: 600px;
+      background: linear-gradient(rgba(74, 74, 76, 0.828), rgba(74, 74, 76, 0.946)),
+                  url('DSC05161-1024x681 (1).jpg') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      padding-top: 70px;
+      color: var(--white);
+    }
+
+    
+
+    #about {
+      border-radius: 25% 25% 0 0/60px 60px 0 0;
+      background-color: var(--white);
+      overflow: hidden;
+      padding-top: 100px;
+      margin-top: -60px;
+      z-index: 1;
+    }
+    
+    #services {
+      color: var(--dark-gray);
       background-color: var(--light-gray);
+      border-radius: 25% 25% 0 0/60px 60px 0 0;
+      overflow: hidden;
+      margin-top: -60px;
+      padding-top: 100px;
+      z-index: 1;
+    }
+
+    .testimonial-section {
+      padding-bottom: 120px;
+      border-radius: 25% 25% 0 0/60px 60px 0 0;
+      background-color: var(--light-gray);
+      overflow: hidden;
+      margin-top: -60px;
+      padding-top: 100px;
+      z-index: 1;
+    }
+
+    .testimonial-card {
+      background-color: var(--dark-gray);
+      color: var(--white);
+      border-radius: 10px;
+      padding: 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    #contact {
+      color: var(--dark-gray);
+      background-color: var(--white);
+      border-radius: 25% 25% 0 0/60px 60px 0 0;
+      overflow: hidden;
+      margin-top: -60px;
+      padding-top: 100px;
+      z-index: 1;
+    }
+
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
     }
     
-    .text-yellow {
-      color: var(--yellow);
+    .hero-subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 2.5rem;
     }
     
+    /* Botões */
     .btn-yellow {
       background-color: var(--yellow);
       color: var(--dark-gray);
@@ -59,6 +194,26 @@
       color: var(--dark-gray);
     }
     
+    /* Caminhão flutuante */
+    .floating-truck {
+      position: relative;
+      animation: float 6s ease-in-out infinite;
+      transform-origin: center;
+      perspective: 1000px;
+    }
+    
+    .floating-truck img {
+      max-width: 100%;
+      height: auto;
+      filter: drop-shadow(0 10px 20px rgba(255, 186, 10, 0.4));
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotateY(0deg); }
+      50% { transform: translateY(-20px) rotateY(5deg); }
+    }
+    
+    /* Navbar */
     .navbar {
       background-color: var(--dark-gray);
       padding: 15px 0;
@@ -99,33 +254,7 @@
       width: 100%;
     }
     
-    .hero-section {
-      height: 100vh;
-      min-height: 600px;
-      background: linear-gradient(rgba(74, 74, 76, 0.298), rgba(74, 74, 76, 0.229)),
-                  url('DSC05161-1024x681\ \(1\).jpg') no-repeat center center/cover;
-      display: flex;
-      align-items: center;
-      color: var(--white);
-      padding-top: 70px;
-    }
-    
-    .hero-title {
-      font-size: 3.5rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      line-height: 1.2;
-    }
-    
-    .hero-title span {
-      color: var(--yellow);
-    }
-    
-    .hero-subtitle {
-      font-size: 1.5rem;
-      margin-bottom: 2.5rem;
-    }
-    
+    /* Section Titles */
     .section-title {
       text-align: center;
       margin-bottom: 3rem;
@@ -150,530 +279,162 @@
       transform: translateX(-50%);
     }
     
-    .feature-card {
-      background-color: var(--white);
-      border-radius: 10px;
-      padding: 2rem;
-      height: 100%;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-      transition: all 0.3s;
-      border-left: 4px solid var(--yellow);
+    /* About Section */
+    .fortitude-header {
+      text-align: center;
+      margin-bottom: 50px;
     }
     
-    .feature-card:hover {
+    .fortitude-title {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--dark-gray);
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    
+    .fortitude-title span {
+      color: var(--yellow);
+      position: relative;
+    }
+    
+    .fortitude-subtitle {
+      font-size: 1.2rem;
+      color: var(--medium-gray);
+      line-height: 1.6;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .pillar-card {
+      background: var(--white);
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s ease;
+      height: 100%;
+      border-top: 5px solid var(--yellow);
+      position: relative;
+    }
+    
+    .pillar-card:hover {
       transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    }
+    
+    .pillar-icon {
+      width: 70px;
+      height: 70px;
+      background-color: rgba(255, 186, 10, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: var(--yellow);
+    }
+    
+    .pillar-number {
+      position: absolute;
+      top: -15px;
+      right: 20px;
+      width: 40px;
+      height: 40px;
+      background-color: var(--dark-gray);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1.2rem;
+    }
+    
+    .pillar-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--dark-gray);
+      margin-bottom: 15px;
+    }
+    
+    .pillar-description {
+      color: var(--medium-gray);
+      line-height: 1.6;
+    }
+    
+    /* Services Section */
+    .feature-icon-bg {
+      width: 50px;
+      height: 55px;
+      border-radius: 50%;
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      flex-shrink: 0;
     }
     
     .feature-icon {
-      font-size: 2.5rem;
       color: var(--yellow);
-      margin-bottom: 1.5rem;
+      font-size: 2.2rem;
     }
-
-.full-width-section {
-            width: 100vw;
-            position: relative;
-            left: 50%;
-            right: 50%;
-            margin-left: -50vw;
-            margin-right: -50vw;
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-        
-        /* Ajuste para containers dentro das sections */
-        .full-width-section > .container {
-            padding-left: 0;
-            padding-right: 0;
-            max-width: 100%;
-        }
-        
-        /* Ajuste para rows e cols */
-        .full-width-section .row {
-            margin-left: 0;
-            margin-right: 0;
-        }
-        
-        .full-width-section .row > [class*="col-"] {
-            padding-left: 15px;
-            padding-right: 15px;
-        }
-        
-        /* Estilos para a seção About corrigida */
-        #about {
-            background-color: var(--white);
-            overflow: hidden;
-            padding: 100px 0;
-            position: relative;
-        }
-        
-        .fortitude-header {
-            text-align: center;
-            margin-bottom: 50px;
-        }
-        
-        .fortitude-title {
-            font-size: 2.8rem;
-            font-weight: 800;
-            color: var(--dark-gray);
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-        
-        .fortitude-title span {
-            color: var(--yellow);
-            position: relative;
-        }
-        
-        .fortitude-subtitle {
-            font-size: 1.2rem;
-            color: var(--medium-gray);
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .pillar-card {
-            background: var(--white);
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s ease;
-            height: 100%;
-            border-top: 5px solid var(--yellow);
-            position: relative;
-        }
-        
-        .pillar-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-        }
-        
-        .pillar-icon {
-            width: 70px;
-            height: 70px;
-            background-color: rgba(255, 186, 10, 0.15);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            font-size: 28px;
-            color: var(--yellow);
-        }
-        
-        .pillar-number {
-            position: absolute;
-            top: -15px;
-            right: 20px;
-            width: 40px;
-            height: 40px;
-            background-color: var(--dark-gray);
-            color: var(--white);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.2rem;
-        }
-        
-        .pillar-title {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--dark-gray);
-            margin-bottom: 15px;
-        }
-        
-        .pillar-description {
-            color: var(--medium-gray);
-            line-height: 1.6;
-        }
-        
-        .fortitude-highlight {
-            background: linear-gradient(135deg, var(--yellow) 0%, #ffcb45 100%);
-            border-radius: 20px;
-            padding: 40px;
-            color: var(--dark-gray);
-            margin-top: 40px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .highlight-text {
-            font-size: 1.3rem;
-            font-weight: 600;
-            text-align: center;
-            margin: 0;
-            position: relative;
-            z-index: 2;
-        }
-        
-        /* Estilos para a seção de serviços */
-        #services {
-            background-color: var(--light-gray);
-            padding: 100px 0;
-        }
-        
-        .service-card {
-            background: var(--white);
-            border-radius: 15px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-            transition: all 0.4s ease;
-            height: 100%;
-            border-left: 5px solid var(--yellow);
-        }
-        
-        .service-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
-        }
-        
-        .service-icon {
-            width: 60px;
-            height: 60px;
-            background-color: rgba(255, 186, 10, 0.15);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            font-size: 24px;
-            color: var(--yellow);
-        }
-        
-        .service-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--dark-gray);
-            margin-bottom: 15px;
-        }
-        
-        .service-description {
-            color: var(--medium-gray);
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-        
-        .btn-yellow {
-            background-color: var(--yellow);
-            color: var(--dark-gray);
-            font-weight: bold;
-            border: none;
-            padding: 10px 25px;
-            border-radius: 30px;
-            transition: all 0.3s;
-        }
-        
-        .btn-yellow:hover {
-            background-color: #e6a908;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 186, 10, 0.3);
-        }
-        
-        /* Responsividade */
-        @media (max-width: 992px) {
-            .fortitude-title {
-                font-size: 2.2rem;
-            }
-            
-            .pillar-card {
-                padding: 25px;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .full-width-section {
-                padding-left: 10px;
-                padding-right: 10px;
-            }
-            
-            .fortitude-title {
-                font-size: 1.8rem;
-            }
-            
-            .fortitude-subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .pillar-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 24px;
-            }
-            
-            .pillar-title {
-                font-size: 1.2rem;
-            }
-            
-            .fortitude-highlight {
-                padding: 30px 20px;
-            }
-            
-            .highlight-text {
-                font-size: 1.1rem;
-            }
-        }
-  /* Estilos para a nova seção de diferenciais */
-/* Estilos para a seção de diferenciais */
-#diferenciais {
-  background-color: #f8f9fa;
-}
-
-.feature-icon-bg {
-
-  width: 50px;
-  height: 55px;
-  border-radius: 50%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.feature-icon {
-  color: var(--yellow);
-  font-size: 2.2rem;
-  
-}
-
-#diferenciais i {
-  color: var(--medium-gray);
-  font-size: 2.2rem;
-  
-}
-
-#diferenciais h3 {
-  color: var(--dark-gray);
-  font-weight: 600;
-  font-size: 1.4rem;
-}
-
-#diferenciais p {
-  color: var(--medium-gray);
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-/* Layout Responsivo */
-@media (max-width: 767.98px) {
-  #diferenciais .col-md-6 {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-  
-  .feature-icon-bg {
-    width: 50px;
-    height: 50px;
-  }
-  
-  .feature-icon {
-    font-size: 1.2rem;
-  }
-  
-  #diferenciais h3 {
-    font-size: 1.2rem;
-  }
-  
-  #diferenciais p {
-    font-size: 1rem;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 991.98px) {
-  #diferenciais .col-md-6 {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-}
-
-.btn-yellow-sm {
-  background-color: var(--yellow);
-  color: var(--dark-gray);
-  font-weight: 600;
-  border: none;
-  padding: 8px 20px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  transition: all 0.3s;
-  display: inline-block;
-}
-
-.btn-yellow-sm:hover {
-  background-color: #e6a908;
-  transform: translateY(-2px);
-  box-shadow: 0 3px 10px rgba(255, 186, 10, 0.3);
-  color: var(--dark-gray);
-}
-
-@media (max-width: 768px) {
-  .btn-yellow-sm {
-    padding: 6px 16px;
-    font-size: 0.85rem;
-  }
-}
     
+    .btn-yellow-sm {
+      background-color: var(--yellow);
+      color: var(--dark-gray);
+      font-weight: 600;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      transition: all 0.3s;
+      display: inline-block;
+    }
     
-
-    /* Counter Section - Layout Ajustado */
-/* Estilos para a seção de números */
-.counter-number {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--yellow);
-  margin-bottom: 0.5rem;
-}
-
-.counter-value {
-  display: inline-block;
-  min-width: 60px;
-}
-
-.counter-section {
-  background-color: var(--dark-gray);
-  color: var(--white);
-  padding: 5rem 0;
-}
-
-.counter-item {
-  padding: 1rem;
-}
-
-.counter-number {
-  font-size: 2.5rem;
-  font-weight: 700;
-  color: var(--yellow);
-  margin-bottom: 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.counter-number span {
-  display: inline-block;
-  min-width: 60px; /* Espaço para os números */
-}
-
-.counter-text {
-  font-size: 1rem;
-  line-height: 1.4;
-}
-
-@media (max-width: 992px) {
-  .counter-number {
-    font-size: 2rem;
-  }
-}
-
-@media (max-width: 768px) {
-  .counter-number {
-    font-size: 1.8rem;
-  }
-  
-  .counter-text {
-    font-size: 0.9rem;
-  }
-}
-
-.counter-section {
-  background-color: var(--dark-gray);
-  color: var(--white);
-  padding: 5rem 0;
-  overflow: hidden; /* Previne vazamentos */
-}
-
-.counter-section .row {
-  justify-content: center;
-  row-gap: 2rem; /* Espaço vertical entre linhas */
-}
-
-.counter-item {
-  text-align: center;
-  padding: 1.5rem;
-  min-width: 200px; /* Largura mínima para cada item */
-}
-
-.counter-number {
-  font-size: 2.5rem; /* Reduzi um pouco o tamanho */
-  font-weight: 700;
-  color: var(--yellow);
-  margin-bottom: 0.5rem;
-  line-height: 1.2; /* Melhora o espaçamento */
-  display: inline-block; /* Melhor controle */
-}
-
-.counter-text {
-  font-size: 1rem; /* Reduzi o tamanho */
-  line-height: 1.4;
-  max-width: 150px; /* Limita a largura do texto */
-  margin: 0 auto; /* Centraliza */
-}
-
-/* Ajustes para telas médias */
-@media (max-width: 992px) {
-  .counter-item {
-    min-width: 160px;
-    padding: 1rem;
-  }
-  
-  .counter-number {
-    font-size: 2rem;
-  }
-  
-  .counter-text {
-    font-size: 0.9rem;
-    max-width: 130px;
-  }
-}
-
-/* Ajustes para mobile */
-@media (max-width: 768px) {
-  .counter-section .col-6 {
-    flex: 0 0 50%;
-    max-width: 50%;
-  }
-  
-  .counter-item {
-    min-width: auto;
-    padding: 0.5rem;
-  }
-  
-  .counter-number {
-    font-size: 1.8rem;
-  }
-  
-  .counter-text {
-    font-size: 0.8rem;
-    max-width: 100px;
-  }
-}
-
-    /* .counter-section {
+    .btn-yellow-sm:hover {
+      background-color: #e6a908;
+      transform: translateY(-2px);
+      box-shadow: 0 3px 10px rgba(255, 186, 10, 0.3);
+      color: var(--dark-gray);
+    }
+    
+    /* Counter Section */
+    .counter-section {
       background-color: var(--dark-gray);
       color: var(--white);
       padding: 5rem 0;
+      overflow: hidden;
+    }
+    
+    .counter-section .row {
+      justify-content: center;
+      row-gap: 2rem;
     }
     
     .counter-item {
       text-align: center;
       padding: 1.5rem;
+      min-width: 200px;
     }
     
     .counter-number {
-      font-size: 3.5rem;
+      font-size: 2.5rem;
       font-weight: 700;
       color: var(--yellow);
       margin-bottom: 0.5rem;
+      line-height: 1.2;
+      display: inline-block;
     }
     
     .counter-text {
-      font-size: 1.2rem;
-    } */
+      font-size: 1rem;
+      line-height: 1.4;
+      max-width: 150px;
+      margin: 0 auto;
+    }
     
+    /* Partners Slider */
     .partners-slider {
       overflow: hidden;
       white-space: nowrap;
@@ -688,7 +449,7 @@
     .partner-logo {
       height: 80px;
       margin: 0 30px;
-      filter: grayscale(100%);
+      filter: grayscale(25%);
       opacity: 0.7;
       transition: all 0.3s;
     }
@@ -698,52 +459,41 @@
       opacity: 1;
     }
     
-    .service-card {
-      background-color: var(--white);
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s;
-      margin-bottom: 30px;
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
     }
     
-    .service-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    /* Contact Section */
+    .contact-info {
+      margin-bottom: 2rem;
     }
     
-    .service-img {
-      width: 100%;
-      height: 200px;
-      object-fit: cover;
+    .contact-info p {
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
     }
     
-    .service-body {
-      padding: 1.5rem;
-    }
-    
-    .testimonial-section {
-      background-color: var(--light-gray);
-      padding: 5rem 0;
-    }
-    
-    .testimonial-card {
-      background-color: var(--white);
-      border-radius: 10px;
-      padding: 2rem;
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    }
-    
-    .testimonial-text {
-      font-style: italic;
-      margin-bottom: 1.5rem;
-    }
-    
-    .testimonial-author {
-      font-weight: 700;
+    .contact-info i {
+      margin-right: 10px;
       color: var(--yellow);
+      width: 20px;
     }
     
+    .social-icons a {
+      color: var(--dark-gray);
+      font-size: 1.5rem;
+      margin-right: 15px;
+      transition: all 0.3s;
+    }
+    
+    .social-icons a:hover {
+      color: var(--yellow);
+      transform: translateY(-3px);
+    }
+    
+    /* Footer */
     footer {
       background-color: var(--dark-gray);
       color: var(--white);
@@ -754,18 +504,6 @@
       height: 50px;
       margin-bottom: 1.5rem;
       width: auto;
-    }
-    
-    .social-icons a {
-      color: var(--white);
-      font-size: 1.5rem;
-      margin-right: 15px;
-      transition: all 0.3s;
-    }
-    
-    .social-icons a:hover {
-      color: var(--yellow);
-      transform: translateY(-3px);
     }
     
     .footer-links h5 {
@@ -794,18 +532,20 @@
       padding-left: 5px;
     }
     
-    .contact-info i {
-      color: var(--yellow);
-      margin-right: 10px;
-      width: 20px;
+    /* Form Styles */
+    .form-control, .form-select {
+      border-radius: 8px;
+      padding: 12px 15px;
+      border: 1px solid #ddd;
+      margin-bottom: 1rem;
     }
     
-    @keyframes scroll {
-      0% { transform: translateX(0); }
-      100% { transform: translateX(-50%); }
+    .form-control:focus, .form-select:focus {
+      border-color: var(--yellow);
+      box-shadow: 0 0 0 0.2rem rgba(255, 186, 10, 0.25);
     }
     
-    /* Responsividade melhorada */
+    /* Responsividade */
     @media (max-width: 1200px) {
       .hero-title {
         font-size: 3rem;
@@ -816,7 +556,7 @@
       }
       
       .counter-number {
-        font-size: 3rem;
+        font-size: 2.2rem;
       }
     }
     
@@ -834,11 +574,15 @@
       }
       
       .counter-number {
-        font-size: 2.5rem;
+        font-size: 2rem;
       }
       
-      .feature-card, .service-card {
-        padding: 1.5rem;
+      .fortitude-title {
+        font-size: 2.2rem;
+      }
+      
+      .pillar-card {
+        padding: 25px;
       }
     }
     
@@ -856,7 +600,7 @@
       }
       
       .counter-number {
-        font-size: 2rem;
+        font-size: 1.8rem;
       }
       
       .counter-item {
@@ -875,6 +619,38 @@
       .btn-yellow, .btn-outline-yellow {
         padding: 10px 20px;
         font-size: 0.9rem;
+      }
+      
+      .fortitude-title {
+        font-size: 1.8rem;
+      }
+      
+      .fortitude-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .pillar-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
+      }
+      
+      .pillar-title {
+        font-size: 1.2rem;
+      }
+      
+      .feature-icon {
+        font-size: 1.8rem;
+      }
+      
+      #about, #services, .testimonial-section, #contact {
+        border-radius: 15% 15% 0 0/30px 30px 0 0;
+        padding-top: 80px;
+        margin-top: -40px;
+      }
+      
+      .testimonial-section {
+        padding-bottom: 80px;
       }
     }
     
@@ -908,16 +684,10 @@
         font-size: 2rem;
       }
       
-      .service-img {
-        height: 150px;
-      }
-      
-      /* Ajuste para contadores em telas pequenas */
       .counter-section .col-6 {
         width: 50%;
       }
       
-      /* Garante que os botões fiquem um abaixo do outro em telas pequenas */
       .hero-section .btn {
         display: block;
         width: 100%;
@@ -926,6 +696,14 @@
       
       .hero-section .btn + .btn {
         margin-left: 0;
+      }
+      
+      .whatsapp-float {
+        width: 50px;
+        height: 50px;
+        bottom: 20px;
+        right: 20px;
+        font-size: 25px;
       }
     }
     
@@ -943,62 +721,3 @@
         margin: 0 10px;
       }
     }
-
-    /* Animação do Caminhão */
-.animated-truck {
-  position: fixed;
-  bottom: 20%;
-  left: -200px;
-  z-index: 999;
-  transition: transform 0.5s ease-out;
-  will-change: transform;
-  display: none; /* Inicialmente escondido */
-}
-
-.animated-truck img {
-  width: 200px;
-  height: auto;
-  /* filter: drop-shadow(0 0 10px rgba(255, 186, 10, 0.7)); */
-}
-
-/* Caminhão flutuante na hero section */
-.floating-truck {
-  position: relative;
-  animation: float 6s ease-in-out infinite;
-  transform-origin: center;
-  perspective: 1000px;
-}
-
-.floating-truck img {
-  max-width: 100%;
-  height: auto;
-  filter: drop-shadow(0 10px 20px rgba(255, 186, 10, 0.4));
-}
-
-@keyframes float {
-  0%, 100% {
-    transform: translateY(0) rotateY(0deg);
-  }
-  50% {
-    transform: translateY(-20px) rotateY(5deg);
-  }
-}
-
-/* Ajuste a margem do título para não colidir com o caminhão */
-@media (min-width: 992px) {
-  .hero-title {
-    margin-right: 20px;
-  }
-}
-
-.floating-truck {
-  transition: opacity 0.5s ease-out;
-}
-
-/* Mostrar apenas em desktop */
-@media (min-width: 992px) {
-  .animated-truck {
-    display: block;
-  }
-}
-
