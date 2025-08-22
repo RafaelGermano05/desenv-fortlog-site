@@ -25,6 +25,7 @@
       position: fixed;
       width: 60px;
       height: 60px;
+      text-decoration: none;
       bottom: 25px;
       right: 25px;
       background-color: #25d366;
