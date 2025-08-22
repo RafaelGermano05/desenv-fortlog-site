@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nossa História - FORTLOG</title>
+  <meta name="description" content="Conheça a história da FORTLOG e nossa jornada para nos tornarmos referência em soluções logísticas">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- AOS Animation -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  
+  <style>
+    :root {
+      --yellow: #ffba0a;
+      --dark-gray: #3e3e41;
+      --medium-gray: #5e5e63;
+      --light-gray: #e0e0e0;
+      --white: #ffffff;
+      --road-gray: #5a5a5a;
+      --road-line: #ffffff;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--dark-gray);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    
+    /* Navbar */
+    .navbar {
+      background-color: var(--dark-gray);
+      padding: 15px 0;
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .navbar-brand img {
+      height: 40px;
+      width: auto;
+    }
+    
+    .nav-link {
+      color: var(--white);
+      font-weight: 500;
+      margin: 0 10px;
+      position: relative;
+    }
+    
+    .nav-link:hover {
+      color: var(--yellow);
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--yellow);
+      bottom: -5px;
+      left: 0;
+      transition: width 0.3s;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    /* Hero Section */
+    .hero-section {
+      height: 60vh;
+      min-height: 500px;
+      background: linear-gradient(rgba(62, 62, 65, 0.8), rgba(62, 62, 65, 0.8)),
+                  url('img/interior-de-grande-armazem-de-distribuicao-com-prateleiras-repletas-de-paletas-e-produtos-prontos-para-o-mercado.jpg') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      color: var(--white);
+      padding-top: 70px;
+    }
+    
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    
+    /* Content Sections */
+    .content-section {
+      padding: 100px 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .section-title h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--dark-gray);
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title h2::after {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 3px;
+      background-color: var(--yellow);
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .history-content {
+      margin-bottom: 3rem;
+    }
+    
+    .history-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+    
+    .history-image {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s;
+    }
+    
+    .history-image:hover {
+      transform: scale(1.02);
+    }
+    
+    .history-image img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    
+    /* Values Section */
+    .values-section {
+      background-color: var(--light-gray);
+    }
+    
+    .value-card {
+      background: var(--white);
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s ease;
+      height: 100%;
+      border-top: 5px solid var(--yellow);
+    }
+    
+    .value-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    }
+    
+    .value-icon {
+      width: 70px;
+      height: 70px;
+      background-color: rgba(255, 186, 10, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: var(--yellow);
+    }
+    
+    .value-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--dark-gray);
+      margin-bottom: 15px;
+    }
+    
+    .value-description {
+      color: var(--medium-gray);
+      line-height: 1.6;
+    }
+    
+    /* Road Timeline Section */
+    .road-timeline-section {
+      position: relative;
+      padding: 100px 0;
+      overflow: hidden;
+    }
+    
+    .road-container {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 2000px; /* Altura suficiente para o scroll */
+    }
+    
+    /* Nova estrada com dois traços cinzas e linha amarela central */
+    .road {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+      height: 100%;
+      z-index: 1;
+    }
+    
+    /* Faixas cinzas da estrada */
+    .road-lane {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      background: var(--road-gray);
+      width: 120px;
+    }
+    
+    .road-lane.left {
+      left: 0;
+    }
+    
+    .road-lane.right {
+      right: 0;
+    }
+    
+    /* Linha central amarela */
+    .road-center {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 100%;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 20px,
+        var(--yellow) 20px,
+        var(--yellow) 40px
+      );
+      z-index: 2;
+    }
+    
+    /* Bordas da estrada */
+    .road-edge {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 5px;
+      background: #444;
+    }
+    
+    .road-edge.left {
+      left: 120px;
+    }
+    
+    .road-edge.right {
+      right: 120px;
+    }
+    
+    .moving-truck {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 160px;
+      height: 60px;
+      z-index: 10;
+      transition: top 0.1s ease-out;
+    }
+    
+    .moving-truck img {
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+    }
+    
+    .timeline-item-road {
+      position: absolute;
+      width: 380px;
+      padding: 25px;
+      background: var(--white);
+      border-radius: 10px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      z-index: 5;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    
+    .timeline-item-road.visible {
+      opacity: 1;
+    }
+    
+    .timeline-item-road.left {
+      left: 50px;
+    }
+    
+    .timeline-item-road.right {
+      right: 50px;
+    }
+    
+    .timeline-year-road {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 80px;
+      height: 80px;
+      background: var(--yellow);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--dark-gray);
+      font-weight: 700;
+      font-size: 1.2rem;
+      z-index: 6;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .timeline-item-road.left .timeline-year-road {
+      right: -90px;
+    }
+    
+    .timeline-item-road.right .timeline-year-road {
+      left: -90px;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--dark-gray);
+      color: var(--white);
+      padding: 4rem 0 2rem;
+    }
+    
+    .footer-logo {
+      height: 50px;
+      margin-bottom: 1.5rem;
+      width: auto;
+    }
+    
+    .footer-links h5 {
+      color: var(--yellow);
+      margin-bottom: 1.5rem;
+      font-size: 1.2rem;
+    }
+    
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.8rem;
+    }
+    
+    .footer-links a {
+      color: var(--light-gray);
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    
+    .footer-links a:hover {
+      color: var(--yellow);
+      padding-left: 5px;
+    }
+    
+    .social-icons a {
+      color: var(--white);
+      font-size: 1.5rem;
+      margin-right: 15px;
+      transition: all 0.3s;
+    }
+    
+    .social-icons a:hover {
+      color: var(--yellow);
+      transform: translateY(-3px);
+    }
+    
+    /* Responsividade */
+    @media (max-width: 1200px) {
+      .hero-title {
+        font-size: 3rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.3rem;
+      }
+      
+      .timeline-item-road {
+        width: 350px;
+      }
+    }
+    
+    @media (max-width: 992px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.2rem;
+      }
+      
+      .section-title h2 {
+        font-size: 2.2rem;
+      }
+      
+      .road {
+        width: 250px;
+      }
+      
+      .road-lane {
+        width: 100px;
+      }
+      
+      .road-edge.left {
+        left: 100px;
+      }
+      
+      .road-edge.right {
+        right: 100px;
+      }
+      
+      .timeline-item-road {
+        width: 300px;
+      }
+      
+      .timeline-item-road.left {
+        left: 20px;
+      }
+      
+      .timeline-item-road.right {
+        right: 20px;
+      }
+      
+      .timeline-item-road.left .timeline-year-road {
+        right: -70px;
+      }
+      
+      .timeline-item-road.right .timeline-year-road {
+        left: -70px;
+      }
+      
+      .timeline-year-road {
+        width: 60px;
+        height: 60px;
+        font-size: 1rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+      
+      .content-section {
+        padding: 80px 0;
+      }
+      
+      .road-timeline-section {
+        padding: 80px 0;
+      }
+      
+      .road-container {
+        height: 2200px;
+      }
+      
+      .road {
+        width: 200px;
+      }
+      
+      .road-lane {
+        width: 80px;
+      }
+      
+      .road-edge.left {
+        left: 80px;
+      }
+      
+      .road-edge.right {
+        right: 80px;
+      }
+      
+      .timeline-item-road {
+        width: 80%;
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%);
+      }
+      
+      .timeline-item-road.left .timeline-year-road,
+      .timeline-item-road.right .timeline-year-road {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        top: -40px;
+      }
+      
+      .moving-truck {
+        width: 100px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .hero-title {
+        font-size: 1.8rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+      
+      .section-title h2 {
+        font-size: 1.6rem;
+      }
+      
+      .road {
+        width: 180px;
+      }
+      
+      .road-lane {
+        width: 70px;
+      }
+      
+      .road-edge.left {
+        left: 70px;
+      }
+      
+      .road-edge.right {
+        right: 70px;
+      }
+      
+      .timeline-item-road {
+        width: 90%;
+        padding: 20px;
+      }
+      
+      .moving-truck {
+        width: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="img/cropped-fortlog-horizontal-fort-branco-768x242.png" alt="FORTLOG Logo" width="150" height="auto">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="nossa-historia.html">Nossa História</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#services">Serviços</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#numbers">Números</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="index.html#contact">Contato</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+          <h1 class="hero-title">Nossa História</h1>
+          <p class="hero-subtitle">A jornada da FORTLOG em transformar a logística com excelência e inovação</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- History Content Section -->
+  <section class="content-section">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6" data-aos="fade-right">
+          <div class="history-content">
+            <div class="section-title">
+              <h2>Nossa Origem</h2>
+            </div>
+            <p class="history-text">
+              A FORTLOG nasceu com um propósito de potencialização, levando mais velocidade, eficiência e inteligência operacional para cada entrega. No início, éramos o motor silencioso por trás das operações, garantindo que tudo fluísse no tempo certo e com a qualidade que o grupo sempre defendeu.
+            </p>
+            <p class="history-text">
+              Mas algo aconteceu no caminho. Aquilo que começou como um braço estratégico se transformou em algo muito maior. A cada rota percorrida, a cada operação concluída, a FORTLOG cresceu em expertise, estrutura e reconhecimento até se tornar uma potência própria, capaz de impulsionar empresas de todos os portes com soluções logísticas completas e sob medida.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-6" data-aos="fade-left">
+          <div class="history-image">
+            <img src="img/fundo-estoque.jpeg" alt="Fundação da FORTLOG" style="height: 400px;">
+          </div>
+        </div>
+      </div>
+      
+      <div class="row align-items-center mt-5">
+        <div class="col-lg-6 order-lg-2" data-aos="fade-left">
+          <div class="history-content">
+            <div class="section-title">
+              <h2>Nossa Missão</h2>
+            </div>
+            <p class="history-text">
+              Hoje, com entregas dedicadas, logística reversa, cargas aéreas, armazenagem inteligente e operações de cross docking, transformamos desafios em oportunidades e conectamos negócios ao seu próximo nível.
+            </p>
+            <p class="history-text">
+              Porque, para nós, logística não é apenas transporte: é o legado que construímos todos os dias. É a certeza de que cada entrega representa não apenas um produto que chega ao destino, mas uma promessa cumprida, um compromisso honrado e um relacionamento fortalecido.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-6 order-lg-1" data-aos="fade-right">
+          <div class="history-image">
+            <img src="img/025dafe5-27c0-4185-8d05-c0ac83fa839e.jpeg" alt="Missão da FORTLOG" style="height: 400px;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Values Section -->
+  <section class="content-section values-section">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Nossos Valores</h2>
+      </div>
+      
+      <div class="row">
+        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-truck-fast"></i>
+            </div>
+            <h3 class="value-title">Agilidade</h3>
+            <p class="value-description">Velocidade e precisão em cada entrega, garantindo prazos curtos e confiabilidade operacional.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-shield-alt"></i>
+            </div>
+            <h3 class="value-title">Confiabilidade</h3>
+            <p class="value-description">Compromisso com a segurança и integridade de cada carga, do ponto de origem ao destino final.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3 class="value-title">Inovação</h3>
+            <p class="value-description">Busca constante por soluções inteligentes que otimizam processos e reduzem custos.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-hands-helping"></i>
+            </div>
+            <h3 class="value-title">Parceria</h3>
+            <p class="value-description">Relacionamento próximo com clientes, entendendo necessidades e superando expectativas.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3 class="value-title">Crescimento</h3>
+            <p class="value-description">Expansão constante de serviços e capacidades para atender demandas em evolução.</p>
+          </div>
+        </div>
+        
+        <div class="col-md-6 col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+          <div class="value-card">
+            <div class="value-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h3 class="value-title">Sustentabilidade</h3>
+            <p class="value-description">Práticas logísticas responsáveis que minimizam impactos ambientais e sociais.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Road Timeline Section -->
+  <section class="road-timeline-section">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Nossa Jornada</h2>
+    </div>
+    
+    <div class="road-container">
+      <!-- Nova estrutura de estrada com duas faixas cinzas e linha central amarela -->
+      <div class="road">
+        <div class="road-lane left"></div>
+        <div class="road-lane right"></div>
+        <div class="road-center"></div>
+        <div class="road-edge left"></div>
+        <div class="road-edge right"></div>
+      </div>
+      
+      <div class="moving-truck" id="movingTruck">
+        <img src="img/CAMINHAO-FORTLOG.png" alt="Caminhão FORTLOG">
+      </div>
+      
+      <div class="timeline-item-road left" style="top: 200px;">
+        <h3>Fundação</h3>
+        <p>Nascimento da FORTLOG com foco em operações logísticas especializadas e soluções personalizadas.</p>
+        <div class="timeline-year-road">2019</div>
+      </div>
+      
+      <div class="timeline-item-road right" style="top: 500px;">
+        <h3>Expansão Regional</h3>
+        <p>Cobertura de todo o estado do Ceará com frota própria e tecnologia de rastreamento em tempo real.</p>
+        <div class="timeline-year-road">2020</div>
+      </div>
+      
+      <div class="timeline-item-road left" style="top: 800px;">
+        <h3>Novos Serviços</h3>
+        <p>Implementação de logística reversa, cargas aéreas e armazenagem inteligente para clientes estratégicos.</p>
+        <div class="timeline-year-road">2021</div>
+      </div>
+      
+      <div class="timeline-item-road right" style="top: 1100px;">
+        <h3>Consolidação</h3>
+        <p>Atendimento a mais de 500 clientes e reconhecimento como referência em soluções logísticas integradas.</p>
+        <div class="timeline-year-road">2023</div>
+      </div>
+      
+      <div class="timeline-item-road left" style="top: 1400px;">
+        <h3>Visão Futura</h3>
+        <p>Expansão nacional e investimento em tecnologia para liderar a transformação digital do setor logístico.</p>
+        <div class="timeline-year-road">2025</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 mb-4 mb-lg-0">
+          <img src="img/cropped-fortlog-horizontal-fort-branco-768x242.png" alt="FORTLOG Logo" class="footer-logo">
+          <p class="mt-3">Conectamos seu produto ao destino certo, com a agilidade que o mercado exige e a excelência que você merece.</p>
+          <div class="social-icons mt-3">
+            <a href="https://instagram.com/fortlogbrasil" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="https://wa.me/5585999064348" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+          <div class="footer-links">
+            <h5>Links Rápidos</h5>
+            <ul>
+              <li><a href="index.html">Home</a></li>
+              <li><a href="nossa-historia.html">Nossa História</a></li>
+              <li><a href="index.html#services">Serviços</a></li>
+              <li><a href="index.html#numbers">Números</a></li>
+              <li><a href="index.html#contact">Contato</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+          <div class="footer-links">
+            <h5>Serviços</h5>
+            <ul>
+              <li><a href="index.html#services">Entregas Dedicadas</a></li>
+              <li><a href="index.html#services">Logística Reversa</a></li>
+              <li><a href="index.html#services">Cargas Aéreas</a></li>
+              <li><a href="index.html#services">Armazenagem</a></li>
+              <li><a href="index.html#services">Cross Docking</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-4">
+          <div class="footer-links">
+            <h5>Contato</h5>
+            <ul class="contact-info">
+              <li><i class="fas fa-map-marker-alt"></i> Rua Augusta Benevides, 1304</li>
+              <li><i class="fas fa-phone"></i> (85) 99906-4348</li>
+              <li><i class="fas fa-envelope"></i> Igor@forsat.com.br</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <hr class="mt-4 mb-4">
+      <div class="text-center">
+        <p class="mb-0">&copy; 2025 FORTLOG Brasil. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Inicializa AOS
+      AOS.init({
+        duration: 800,
+        easing: 'ease-in-out',
+        once: true
+      });
+
+      // Suaviza rolagem para links internos
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            window.scrollTo({
+              top: target.offsetTop - 70,
+              behavior: 'smooth'
+            });
+          }
+        });
+      });
+
+      // Animação do caminhão na estrada com scroll
+      const movingTruck = document.getElementById('movingTruck');
+      const roadContainer = document.querySelector('.road-container');
+      const timelineItems = document.querySelectorAll('.timeline-item-road');
+      
+      // Posição inicial do caminhão
+      movingTruck.style.top = '0px';
+      
+      // Evento de scroll para mover o caminhão
+      window.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY;
+        const roadSection = document.querySelector('.road-timeline-section');
+        const roadSectionTop = roadSection.offsetTop;
+        const roadSectionHeight = roadSection.offsetHeight;
+        const windowHeight = window.innerHeight;
+        
+        // Verifica se a seção da estrada está visível
+        if (scrollPosition > roadSectionTop - windowHeight && 
+            scrollPosition < roadSectionTop + roadSectionHeight) {
+          
+          // Calcula a posição do caminhão baseada no scroll
+          const scrollPercent = (scrollPosition - roadSectionTop + windowHeight/2) / 
+                                (roadSectionHeight - windowHeight/2);
+          
+          // Limita entre 0 e 1
+          const limitedScrollPercent = Math.min(Math.max(scrollPercent, 0), 1);
+          
+          // Posição do caminhão (90% da altura do container para dar margem)
+          const truckPosition = limitedScrollPercent * (roadContainer.offsetHeight - 100);
+          movingTruck.style.top = `${truckPosition}px`;
+          
+          // Mostra/oculta os itens da linha do tempo conforme o scroll
+          // AUMENTEI a área de visibilidade para que os containers fiquem visíveis por mais tempo
+          timelineItems.forEach(item => {
+            const itemTop = parseInt(item.style.top);
+            // Aumentei a margem de 100px para 200px para os containers ficarem visíveis por mais tempo
+            if (truckPosition > itemTop - 200 && truckPosition < itemTop + 200) {
+              item.classList.add('visible');
+            } else {
+              item.classList.remove('visible');
+            }
+          });
+        }
+      });
+      
+      // Forçar verificação inicial para exibir itens visíveis no carregamento
+      window.dispatchEvent(new Event('scroll'));
+    });
+  </script>
+</body>
+</html>
