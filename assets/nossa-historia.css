@@ -1,0 +1,553 @@
+:root {
+      --yellow: #ffba0a;
+      --dark-gray: #3e3e41;
+      --medium-gray: #5e5e63;
+      --light-gray: #e0e0e0;
+      --white: #ffffff;
+      --road-gray: #5a5a5a;
+      --road-line: #ffffff;
+    }
+    
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: var(--dark-gray);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+    
+    /* Navbar */
+    .navbar {
+      background-color: var(--dark-gray);
+      padding: 15px 0;
+      position: fixed;
+      width: 100%;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .navbar-brand img {
+      height: 40px;
+      width: auto;
+    }
+    
+    .nav-link {
+      color: var(--white);
+      font-weight: 500;
+      margin: 0 10px;
+      position: relative;
+    }
+    
+    .nav-link:hover {
+      color: var(--yellow);
+    }
+    
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      background: var(--yellow);
+      bottom: -5px;
+      left: 0;
+      transition: width 0.3s;
+    }
+    
+    .nav-link:hover::after {
+      width: 100%;
+    }
+    
+    /* Hero Section */
+    .hero-section {
+      height: 60vh;
+      min-height: 500px;
+      background: linear-gradient(rgba(62, 62, 65, 0.8), rgba(62, 62, 65, 0.8)),
+                  url('img/interior-de-grande-armazem-de-distribuicao-com-prateleiras-repletas-de-paletas-e-produtos-prontos-para-o-mercado.jpg') no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      color: var(--white);
+      padding-top: 70px;
+    }
+    
+    .hero-title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+      font-size: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+    
+    /* Content Sections */
+    .content-section {
+      padding: 100px 0;
+    }
+    
+    .section-title {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+    
+    .section-title h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--dark-gray);
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-title h2::after {
+      content: "";
+      position: absolute;
+      width: 50px;
+      height: 3px;
+      background-color: var(--yellow);
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .history-content {
+      margin-bottom: 3rem;
+    }
+    
+    .history-text {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      margin-bottom: 2rem;
+    }
+    
+    .history-image {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s;
+    }
+    
+    .history-image:hover {
+      transform: scale(1.02);
+    }
+    
+    .history-image img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+    
+    /* Values Section */
+    .values-section {
+      background-color: var(--light-gray);
+    }
+    
+    .value-card {
+      background: var(--white);
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      transition: all 0.4s ease;
+      height: 100%;
+      border-top: 5px solid var(--yellow);
+    }
+    
+    .value-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    }
+    
+    .value-icon {
+      width: 70px;
+      height: 70px;
+      background-color: rgba(255, 186, 10, 0.15);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 28px;
+      color: var(--yellow);
+    }
+    
+    .value-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--dark-gray);
+      margin-bottom: 15px;
+    }
+    
+    .value-description {
+      color: var(--medium-gray);
+      line-height: 1.6;
+    }
+    
+    /* Road Timeline Section */
+    .road-timeline-section {
+      position: relative;
+      padding: 100px 0;
+      overflow: hidden;
+    }
+    
+    .road-container {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 2000px; /* Altura suficiente para o scroll */
+    }
+    
+    /* Nova estrada com dois traços cinzas e linha amarela central */
+    .road {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 300px;
+      height: 100%;
+      z-index: 1;
+    }
+    
+    /* Faixas cinzas da estrada */
+    .road-lane {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      background: var(--road-gray);
+      width: 120px;
+    }
+    
+    .road-lane.left {
+      left: 0;
+    }
+    
+    .road-lane.right {
+      right: 0;
+    }
+    
+    /* Linha central amarela */
+    .road-center {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 8px;
+      height: 100%;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent,
+        transparent 20px,
+        var(--yellow) 20px,
+        var(--yellow) 40px
+      );
+      z-index: 2;
+    }
+    
+    /* Bordas da estrada */
+    .road-edge {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 5px;
+      background: #444;
+    }
+    
+    .road-edge.left {
+      left: 120px;
+    }
+    
+    .road-edge.right {
+      right: 120px;
+    }
+    
+    .moving-truck {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 160px;
+      height: 60px;
+      z-index: 10;
+      transition: top 0.1s ease-out;
+    }
+    
+    .moving-truck img {
+      width: 100%;
+      height: auto;
+      filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5));
+    }
+    
+    .timeline-item-road {
+      position: absolute;
+      width: 380px;
+      padding: 25px;
+      background: var(--white);
+      border-radius: 10px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+      z-index: 5;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    
+    .timeline-item-road.visible {
+      opacity: 1;
+    }
+    
+    .timeline-item-road.left {
+      left: 50px;
+    }
+    
+    .timeline-item-road.right {
+      right: 50px;
+    }
+    
+    .timeline-year-road {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 80px;
+      height: 80px;
+      background: var(--yellow);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--dark-gray);
+      font-weight: 700;
+      font-size: 1.2rem;
+      z-index: 6;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    .timeline-item-road.left .timeline-year-road {
+      right: -90px;
+    }
+    
+    .timeline-item-road.right .timeline-year-road {
+      left: -90px;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--dark-gray);
+      color: var(--white);
+      padding: 4rem 0 2rem;
+    }
+    
+    .footer-logo {
+      height: 50px;
+      margin-bottom: 1.5rem;
+      width: auto;
+    }
+    
+    .footer-links h5 {
+      color: var(--yellow);
+      margin-bottom: 1.5rem;
+      font-size: 1.2rem;
+    }
+    
+    .footer-links ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .footer-links li {
+      margin-bottom: 0.8rem;
+    }
+    
+    .footer-links a {
+      color: var(--light-gray);
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+    
+    .footer-links a:hover {
+      color: var(--yellow);
+      padding-left: 5px;
+    }
+    
+    .social-icons a {
+      color: var(--white);
+      font-size: 1.5rem;
+      margin-right: 15px;
+      transition: all 0.3s;
+    }
+    
+    .social-icons a:hover {
+      color: var(--yellow);
+      transform: translateY(-3px);
+    }
+    
+    /* Responsividade */
+    @media (max-width: 1200px) {
+      .hero-title {
+        font-size: 3rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.3rem;
+      }
+      
+      .timeline-item-road {
+        width: 350px;
+      }
+    }
+    
+    @media (max-width: 992px) {
+      .hero-title {
+        font-size: 2.5rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.2rem;
+      }
+      
+      .section-title h2 {
+        font-size: 2.2rem;
+      }
+      
+      .road {
+        width: 250px;
+      }
+      
+      .road-lane {
+        width: 100px;
+      }
+      
+      .road-edge.left {
+        left: 100px;
+      }
+      
+      .road-edge.right {
+        right: 100px;
+      }
+      
+      .timeline-item-road {
+        width: 300px;
+      }
+      
+      .timeline-item-road.left {
+        left: 20px;
+      }
+      
+      .timeline-item-road.right {
+        right: 20px;
+      }
+      
+      .timeline-item-road.left .timeline-year-road {
+        right: -70px;
+      }
+      
+      .timeline-item-road.right .timeline-year-road {
+        left: -70px;
+      }
+      
+      .timeline-year-road {
+        width: 60px;
+        height: 60px;
+        font-size: 1rem;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .hero-title {
+        font-size: 2rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1.1rem;
+      }
+      
+      .section-title h2 {
+        font-size: 1.8rem;
+      }
+      
+      .content-section {
+        padding: 80px 0;
+      }
+      
+      .road-timeline-section {
+        padding: 80px 0;
+      }
+      
+      .road-container {
+        height: 2200px;
+      }
+      
+      .road {
+        width: 200px;
+      }
+      
+      .road-lane {
+        width: 80px;
+      }
+      
+      .road-edge.left {
+        left: 80px;
+      }
+      
+      .road-edge.right {
+        right: 80px;
+      }
+      
+      .timeline-item-road {
+        width: 80%;
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-50%);
+      }
+      
+      .timeline-item-road.left .timeline-year-road,
+      .timeline-item-road.right .timeline-year-road {
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        top: -40px;
+      }
+      
+      .moving-truck {
+        width: 100px;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      .hero-title {
+        font-size: 1.8rem;
+      }
+      
+      .hero-subtitle {
+        font-size: 1rem;
+      }
+      
+      .section-title h2 {
+        font-size: 1.6rem;
+      }
+      
+      .road {
+        width: 180px;
+      }
+      
+      .road-lane {
+        width: 70px;
+      }
+      
+      .road-edge.left {
+        left: 70px;
+      }
+      
+      .road-edge.right {
+        right: 70px;
+      }
+      
+      .timeline-item-road {
+        width: 90%;
+        padding: 20px;
+      }
+      
+      .moving-truck {
+        width: 80px;
+      }
+    }
