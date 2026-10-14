@@ -3,513 +3,428 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FORTLOG - Soluções em Logística</title>
-  <meta name="description" content="FORTLOG - Soluções logísticas completas com agilidade e excelência para todo o Ceará">
-  
-  <!-- Pré-carregamento de recursos -->
-  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="https://unpkg.com/aos@2.3.1/dist/aos.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
+  <title>FORTLOG Brasil - Logística e Armazenagem com Certificação ANVISA</title>
+  <meta name="description" content="FORTLOG Brasil: transporte seguro, armazenagem eficiente, frota monitorada e soluções logísticas com estrutura preparada para exigências da ANVISA.">
+
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+  <link rel="preconnect" href="https://unpkg.com">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
-  <link rel="shortcut icon" href="cropped-cropped-logo_fortlog_horizontal-192x192.png" type="image/x-icon">
-  <link rel="stylesheet" href="assets/style.css">
   <link rel="shortcut icon" href="img/cropped-cropped-logo_fortlog_horizontal-192x192.png" type="image/x-icon">
-
-  <style>
-    .hero-section{
-      background: linear-gradient(rgba(74, 74, 76, 0.828), rgba(74, 74, 76, 0.946)),
-                  url('img/interior-de-grande-armazem-de-distribuicao-com-prateleiras-repletas-de-paletas-e-produtos-prontos-para-o-mercado.jpg') no-repeat center center/cover;
-    }
-
-    #diferenciais {
-      background: linear-gradient(rgba(255, 217, 0, 0.877), rgb(255, 217, 0)),
-                  url('img/025dafe5-27c0-4185-8d05-c0ac83fa839e.jpeg') no-repeat center center/cover;
-    }
-
-    #diferenciais i {
-      color: aliceblue;
-    }
-  </style>
-  
+  <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-  <!-- Botão WhatsApp Fixo -->
-  <a href="https://wa.me/5585999064348" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
-    <i class="fab fa-whatsapp"></i>
+  <a class="whatsapp-float js-whatsapp-link" href="https://wa.me/5585999211671" target="_blank" rel="noopener" aria-label="Falar com a FORTLOG pelo WhatsApp" data-message="Olá, Simone! Gostaria de solicitar um orçamento com a FORTLOG.">
+    <i class="fab fa-whatsapp" aria-hidden="true"></i>
   </a>
 
-  <!-- Container do caminhão animado -->
-  <div class="truck-animation-container">
-    <img src="img/Copilot_20250808_104752.png" alt="Caminhão FORTLOG" class="animated-truck" id="truck-animation" style="width: 120px;">
-  </div>
-
-  <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
     <div class="container">
-      <a class="navbar-brand" href="#home">
-        <img src="img/cropped-fortlog-horizontal-fort-branco-768x242.png" alt="FORTLOG Logo" width="150" height="auto" loading="lazy">
+      <a class="navbar-brand" href="#home" aria-label="Ir para o início">
+        <img src="img/cropped-fortlog-horizontal-fort-branco-768x242.png" alt="FORTLOG Brasil" width="150" height="47">
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Abrir menu">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="#home">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="nossa-historia.html">História</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#about">Sobre</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#services">Serviços</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#numbers">Números</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">Contato</a>
-          </li>
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="nossa-historia.html">Nossa História</a></li>
+          <li class="nav-item"><a class="nav-link" href="#anvisa">Certificação ANVISA</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Portfólio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#numbers">Números</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contato</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <!-- Hero Section -->
-  <section class="hero-section" id="home">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-7" data-aos="fade-right">
-          <h1 class="hero-title"><span>FORT<span style="color: rgb(238, 196, 12);">LOG</span></span> <br>LOGÍSTICA NA VELOCIDADE DO SEU NEGÓCIO</h1>
-          <p class="hero-subtitle">Conectamos seu produto ao destino certo, com a agilidade que o mercado exige e a excelência que você merece.</p>
-          <div class="d-flex flex-wrap">
-            <a href="#contact" class="btn btn-yellow me-2 mb-2">Fale Conosco</a>
-            <a href="nossa-historia.html" class="btn btn-outline-yellow mb-2">Nossa História</a>
+  <main>
+    <section class="hero-section" id="home">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7" data-aos="fade-right">
+            <p class="eyebrow">FORTLOG Brasil</p>
+            <h1 class="hero-title">LOGÍSTICA NA VELOCIDADE DO SEU NEGÓCIO</h1>
+            <p class="hero-subtitle">Transporte seguro e armazenagem eficiente, com frota monitorada e ampla capacidade de armazenagem, garantindo organização, agilidade e segurança.</p>
+            <a class="btn btn-yellow js-whatsapp-link" href="https://wa.me/5585999211671" target="_blank" rel="noopener" data-message="Olá, Simone! Gostaria de solicitar um orçamento com a FORTLOG.">Solicite seu orçamento</a>
           </div>
-        </div>
-        <div class="col-lg-5 d-none d-lg-block" data-aos="fade-left">
-          <div class="floating-truck">
-            <img src="img/Copilot_20250808_110153.png" alt="Caminhão FORTLOG" class="img-fluid" loading="lazy" width="350">
+          <div class="col-lg-5" data-aos="fade-left">
+            <div class="hero-certification" style="background-color: transparent;">
+              <img src="img/certificado_anvisa.PNG" alt="Selo de Certificação ANVISA" class="hero-certification-seal">
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- About Section -->
-  <section class="py-5" id="about">
-    <div class="container py-5">
-      <div class="fortitude-header" data-aos="fade-up">
-        <h2 class="fortitude-title">FORTITUDE <span>FORTLOG</span></h2>
-        <p class="fortitude-subtitle">A Força que Move Nossa Excelência</p>
-        <p class="fortitude-subtitle">Na FORTLOG, FORTITUDE é o que nos guia. É a força que pulsa no nosso dia a dia, movendo pessoas, processos e resultados com excelência.</p>
-      </div>
-      
-      <div class="row">
-        <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="100">
-          <div class="pillar-card">
-            <div class="pillar-number">1</div>
-            <div class="pillar-icon">
-              <i class="fas fa-users"></i>
-            </div>
-            <h3 class="pillar-title">Comprometimento com o Cliente</h3>
-            <p class="pillar-description">Colocamos o cliente no centro de tudo o que fazemos. Nosso foco é entregar com responsabilidade, pontualidade e dedicação, sempre buscando soluções que realmente façam a diferença no negócio de quem confia em nós.</p>
+    <section class="anvisa-section section-spacing" id="anvisa">
+      <div class="container">
+        <div class="row align-items-end mb-5">
+          <div class="col-lg-7" data-aos="fade-up">
+            <p class="eyebrow dark">CERTIFICAÇÃO ANVISA</p>
+            <h2>Armazenagem para produtos que exigem controle e responsabilidade</h2>
+          </div>
+          <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
+            <!-- <p class="section-lead">A FORTLOG atende operações que precisam de organização, rastreabilidade, segurança e armazenagem adequada para diferentes categorias reguladas.</p> -->
           </div>
         </div>
-        
-        <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="200">
-          <div class="pillar-card">
-            <div class="pillar-number">2</div>
-            <div class="pillar-icon">
-              <i class="fas fa-handshake"></i>
-            </div>
-            <h3 class="pillar-title">Integridade e Honestidade</h3>
-            <p class="pillar-description">Agimos com verdade, transparência e ética em todas as relações. Acreditamos que confiança se conquista com atitudes corretas, postura responsável e decisões justas.</p>
-          </div>
-        </div>
-        
-        <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="300">
-          <div class="pillar-card">
-            <div class="pillar-number">3</div>
-            <div class="pillar-icon">
-              <i class="fas fa-chart-line"></i>
-            </div>
-            <h3 class="pillar-title">Evolução Contínua</h3>
-            <p class="pillar-description">Estamos em constante movimento. Aprendemos todos os dias com nossos desafios, com o mercado e, principalmente, com nossos clientes e parceiros. Evoluir é parte da nossa cultura e da nossa entrega.</p>
-          </div>
-        </div>
-        
-        <div class="col-md-6 col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="400">
-          <div class="pillar-card">
-            <div class="pillar-number">4</div>
-            <div class="pillar-icon">
-              <i class="fas fa-fist-raised"></i>
-            </div>
-            <h3 class="pillar-title">FORTITUDE</h3>
-            <p class="pillar-description">A força que nos impulsiona no nosso dia a dia. É a determinação inabalável que nos mantém focados em nossos objetivos e comprometidos com a excelência em cada entrega.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Services Section -->
-  <section class="py-5" id="services">
-    <div class="container py-5">
-      <div class="section-title" data-aos="fade-up">
-        <h2>NOSSOS SERVIÇOS</h2>
-      </div>
-      
-      <div class="row">
-        <!-- Serviço 1 -->
-        <div class="col-md-6 col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="100">
-          <div class="d-flex align-items-start h-100">
-            <div class="feature-icon-bg me-4">
-              <i class="fas fa-truck-fast feature-icon"></i>
+        <div class="anvisa-grid">
+          <article class="anvisa-flip-card" data-aos="fade-up" data-aos-delay="100" tabindex="0">
+            <div class="anvisa-card-inner">
+              <div class="anvisa-card-face anvisa-card-frontFarm" style="--card-image: url('img/farmaciasInsumos.webp');">
+                <div class="anvisa-iconFarm"><i class="fas fa-capsules" aria-hidden="true"></i></div>
+                <h3>Medicamentos e Insumos Farmacêuticos</h3>
+                <p>Clique para saber mais</p>
+              </div>
+              <div class="anvisa-card-face anvisa-card-back">
+                <h3>Medicamentos e Insumos Farmacêuticos</h3>
+                <ul>
+                  <li>Medicamentos acabados</li>
+                  <li>Matérias-primas farmacêuticas</li>
+                  <li>Insumos para a indústria farmacêutica</li>
+                </ul>
+              </div>
             </div>
-            <div>
-              <h3 class="mb-3">Entregas Dedicadas em Todo o Ceará</h3>
-              <p class="mb-3">Com frota própria e rastreamento em tempo real, garantimos agilidade, segurança e comprometimento em cada rota. Seu produto vai onde precisar com prioridade máxima.</p>
-              <a href="#contact" class="btn btn-yellow-sm">Fale Conosco</a>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Serviço 2 -->
-        <div class="col-md-6 col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="200">
-          <div class="d-flex align-items-start h-100">
-            <div class="feature-icon-bg me-4">
-              <i class="fas fa-rotate-left feature-icon"></i>
-            </div>
-            <div>
-              <h3 class="mb-3">Logística Reversa</h3>
-              <p class="mb-3">Transformamos o retorno de produtos em vantagem competitiva. Gestão eficiente de devoluções, com controle, agilidade e custo otimizado.</p>
-              <a href="#contact" class="btn btn-yellow-sm">Fale Conosco</a>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Serviço 3 -->
-        <div class="col-md-6 col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="300">
-          <div class="d-flex align-items-start h-100">
-            <div class="feature-icon-bg me-4">
-              <i class="fas fa-plane feature-icon"></i>
-            </div>
-            <div>
-              <h3 class="mb-3">Cargas Aéreas</h3>
-              <p class="mb-3">Para quando o tempo é o maior ativo: soluções aéreas rápidas e confiáveis, com cobertura nacional e total cuidado com a sua carga.</p>
-              <a href="#contact" class="btn btn-yellow-sm">Fale Conosco</a>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Serviço 4 -->
-        <div class="col-md-6 col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="400">
-          <div class="d-flex align-items-start h-100">
-            <div class="feature-icon-bg me-4">
-              <i class="fas fa-warehouse feature-icon"></i>
-            </div>
-            <div>
-              <h3 class="mb-3">Armazenagem Inteligente</h3>
-              <p class="mb-3">Estrutura com capacidade para até 1.200 pallets, controle de estoque em tempo real e gestão sob demanda. Eficiência, organização e espaço sob medida para o seu negócio.</p>
-              <a href="#contact" class="btn btn-yellow-sm">Fale Conosco</a>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Serviço 5 -->
-        <div class="col-md-6 col-lg-6 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="500">
-          <div class="d-flex align-items-start h-100">
-            <div class="feature-icon-bg me-4">
-              <i class="fas fa-exchange-alt feature-icon"></i>
-            </div>
-            <div>
-              <h3 class="mb-3">Cross Docking</h3>
-              <p class="mb-3">Receba, separe e entregue sem perder tempo. Integramos sua cadeia de suprimentos com agilidade e redução de custos logísticos.</p>
-              <a href="#contact" class="btn btn-yellow-sm">Fale Conosco</a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+          </article>
 
-  <!-- Counter Section -->
-  <section class="counter-section" id="numbers">
-    <div class="container">
-      <div class="section-title" data-aos="fade-up">
-        <h2 class="text-white">OS NÚMEROS FALAM POR SI</h2>
-      </div>
-      <div class="row text-center">
-        <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="100">
-          <div class="counter-item">
-            <div class="counter-number" data-count="7">0</div>
-            <div class="counter-text">anos no mercado</div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="200">
-          <div class="counter-item">
-            <div class="counter-number" data-count="1000000">0</div>
-            <div class="counter-text">toneladas transportadas por ano</div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="300">
-          <div class="counter-item">
-            <div class="counter-number" data-count="55000">0</div>
-            <div class="counter-text">km percorridos por ano</div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="400">
-          <div class="counter-item">
-            <div class="counter-number" data-count="15000">0</div>
-            <div class="counter-text">embarques por ano</div>
-          </div>
-        </div>
-        <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="500">
-          <div class="counter-item">
-            <div class="counter-number" data-count="500">0</div>
-            <div class="counter-text">clientes atendidos por ano</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+          <article class="anvisa-flip-card" data-aos="fade-up" data-aos-delay="180" tabindex="0">
+            <div class="anvisa-card-inner">
+              <div class="anvisa-card-face anvisa-card-frontSau" style="--card-image: url('img/anvisa/produtos-saude.jpg');">
+                <div class="anvisa-iconSau"><i class="fas fa-briefcase-medical" aria-hidden="true"></i></div>
+                <h3>Produtos para Saúde</h3>
+                <p>Clique para saber mais</p>
+              </div>
+              <div class="anvisa-card-face anvisa-card-back">
+                <h3>Produtos para Saúde</h3>
+                <ul>
+                  <li>Equipamentos médicos</li>
+                  <li>Próteses</li>
+                  <li>Curativos</li>
+                  <li>Instrumentos cirúrgicos</li>
+                  <li>Materiais hospitalares</li>
+                </ul>
+              </div>
+            </div>
+          </article>
 
-  <!-- Partners Slider -->
-  <section class="py-5 bg-white">
-    <div class="container py-4">
-      <div class="partners-slider">
-        <div class="partners-track">
-          <img src="img/parceiras/logo-brasinet.png" class="partner-logo" alt="Parceiro 1" loading="lazy">
-          <img src="img/parceiras/LOGO-ELSYS-2020_colorido_RGB-web.png" class="partner-logo" alt="Parceiro 2" loading="lazy">
-          <img src="img/parceiras/logo_hughesnet.png" class="partner-logo" alt="Parceiro 4" loading="lazy">
-          <img src="img/parceiras/conecta-cargo-logo.png" class="partner-logo" alt="Parceiro 5" loading="lazy">
-          <img src="img/parceiras/rta-logo.svg" class="partner-logo" alt="Parceiro 6" loading="lazy">
-          <img src="img/LOGO_FORTSUN_PDF.1.png" class="partner-logo" alt="Parceiro 7" loading="lazy">
-          <img src="img/10 (1).png" class="partner-logo" alt="Parceiro 8" loading="lazy">
-          <img src="img/demo2.svg" class="partner-logo" alt="Parceiro 9" loading="lazy">
-        </div>
-      </div>
-    </div>
-  </section>
+          <article class="anvisa-flip-card" data-aos="fade-up" data-aos-delay="260" tabindex="0">
+            <div class="anvisa-card-inner">
+              <div class="anvisa-card-face anvisa-card-frontHig" style="--card-image: url('img/HigieneCosmetico.jpg');">
+                <div class="anvisa-iconHig"><i class="fas fa-pump-soap" aria-hidden="true"></i></div>
+                <h3>Cosméticos e Higiene</h3>
+                <p>Clique para saber mais</p>
+              </div>
+              <div class="anvisa-card-face anvisa-card-back">
+                <h3>Cosméticos e Higiene</h3>
+                <ul>
+                  <li>Cosméticos</li>
+                  <li>Perfumes</li>
+                  <li>Produtos de higiene pessoal</li>
+                </ul>
+              </div>
+            </div>
+          </article>
 
-  <!-- Features Section -->
-  <section class="py-5 bg-light-gray" id="diferenciais">
-    <div class="container py-5">
-      <div class="section-title" data-aos="fade-up">
-        <h2>NOSSOS DIFERENCIAIS</h2>
-      </div>
-      
-      <div class="row">
-        <!-- Diferencial 1 -->
-        <div class="col-md-6 col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="100">
-          <div class="d-flex align-items-start h-100">
-            <div class="feature-icon-bg me-4">
-              <i class="fas fa-map-marked-alt feature-icon"></i>
+          <article class="anvisa-flip-card" data-aos="fade-up" data-aos-delay="340" tabindex="0">
+            <div class="anvisa-card-inner">
+              <div class="anvisa-card-face anvisa-card-frontAli" style="--card-image: url('img/anvisa/saneantes-alimentos.jpg');">
+                <div class="anvisa-iconAli"><i class="fas fa-boxes-stacked" aria-hidden="true"></i></div>
+                <h3>Saneantes e Alimentos</h3>
+                <p>Clique para saber mais</p>
+              </div>
+              <div class="anvisa-card-face anvisa-card-back">
+                <h3>Saneantes e Alimentos</h3>
+                <ul>
+                  <li>Saneantes, desinfetantes e esterilizantes</li>
+                  <li>Produtos de limpeza hospitalar</li>
+                  <li>Alimentos e suplementos</li>
+                  <li>Produtos com alegações funcionais</li>
+                  <li>Dietas especiais</li>
+                </ul>
+              </div>
             </div>
-            <div>
-              <h3 class="mb-3">Conhecimento completo do Ceará</h3>
-              <p class="mb-3">Conhecemos cada rota, cada necessidade local e cada desafio logístico da região.</p>
-            </div>
-          </div>
+          </article>
         </div>
-        
-        <!-- Diferencial 2 -->
-        <div class="col-md-6 col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="200">
-          <div class="d-flex align-items-start h-100">
-            <div class="feature-icon-bg me-4">
-              <i class="fas fa-clock feature-icon"></i>
-            </div>
-            <div>
-              <h3 class="mb-3">Gestão em Tempo Real</h3>
-              <p class="mb-3">Rastreamento, controle de estoque e performance sempre na palma da mão.</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Diferencial 3 -->
-        <div class="col-md-6 col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="300">
-          <div class="d-flex align-items-start h-100">
-            <div class="feature-icon-bg me-4">
-              <i class="fas fa-headset feature-icon"></i>
-            </div>
-            <div>
-              <h3 class="mb-3">Atendimento Consultivo</h3>
-              <p class="mb-3">Você não fala com um atendente, você fala com um especialista.</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Diferencial 4 -->
-        <div class="col-md-6 col-lg-6 mb-5" data-aos="fade-up" data-aos-delay="400">
-          <div class="d-flex align-items-start h-100">
-            <div class="feature-icon-bg me-4">
-              <i class="fas fa-truck-fast feature-icon"></i>
-            </div>
-            <div>
-              <h3 class="mb-3">Agilidade e Comprometimento</h3>
-              <p class="mb-3">Atraso não faz parte do nosso vocabulário. Aqui, o tempo do cliente é lei.</p>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Diferencial 5 -->
-        <div class="col-md-6 col-lg-6 mb-5 mb-md-0" data-aos="fade-up" data-aos-delay="500">
-          <div class="d-flex align-items-start h-100">
-            <div class="feature-icon-bg me-4">
-              <i class="fas fa-warehouse feature-icon"></i>
-            </div>
-            <div>
-              <h3 class="mb-3">Estrutura Completa e Escalável</h3>
-              <p class="mb-3">Capacidade para crescer com você. Hoje, amanhã e no futuro.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Testimonial Section -->
-  <section class="testimonial-section">
-    <div class="container">
-      <div class="section-title" data-aos="fade-up">
-        <h2>DEPOIMENTOS</h2>
+        <div class="anvisa-cta" data-aos="fade-up">
+          <div>
+            <h3>Quero uma armazenagem conforme as exigências da ANVISA.</h3>
+          </div>
+          <a class="btn btn-dark-custom js-whatsapp-link" href="https://wa.me/5585999211671" target="_blank" rel="noopener" data-message="Olá, Simone! Quero uma armazenagem conforme as exigências da ANVISA. Pode me ajudar?">Falar com a Fortlog</a>
+        </div>
       </div>
-      <div class="row justify-content-center">
-        <div class="col-lg-8" data-aos="fade-up">
-          <div class="testimonial-card">
-            <div class="testimonial-text">
-              <p>"A FORTLOG é nossa parceira de longa data, e isso se deve à confiança e segurança que ela nos transmite em cada entrega. Temos a tranquilidade de saber que nossos equipamentos sempre chegam ao destino em perfeitas condições. A pontualidade, o comprometimento, a comunicação clara e a dedicação da equipe fazem toda a diferença. É uma transportadora que realmente entrega excelência."</p>
+    </section>
+
+    <section class="services-section section-spacing" id="services">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <p class="eyebrow dark">Portfólio</p>
+          <h2>Portfólio de Serviços</h2>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-icon"><i class="fas fa-truck-fast" aria-hidden="true"></i></div>
+            <h3>Entregas Dedicadas em Todo o Ceará</h3>
+            <p>Com frota própria e rastreamento em tempo real, garantimos agilidade, segurança e comprometimento em cada rota. Seu produto vai onde precisar com prioridade máxima.</p>
+            <a class="service-link js-whatsapp-link" href="https://wa.me/5585999211671" target="_blank" rel="noopener" data-message="Olá, Simone! Tenho interesse em entregas dedicadas em todo o Ceará.">Solicitar orçamento</a>
+          </article>
+
+          <article class="service-card" data-aos="fade-up" data-aos-delay="180">
+            <div class="service-icon"><i class="fas fa-warehouse" aria-hidden="true"></i></div>
+            <h3>Armazenagem Inteligente</h3>
+            <p>Estrutura com capacidade para até 1.200 pallets, controle de estoque em tempo real e gestão sob demanda. Eficiência, organização e espaço sob medida para o seu negócio.</p>
+            <a class="service-link js-whatsapp-link" href="https://wa.me/5585999211671" target="_blank" rel="noopener" data-message="Olá, Simone! Tenho interesse em armazenagem inteligente.">Solicitar orçamento</a>
+          </article>
+
+          <article class="service-card" data-aos="fade-up" data-aos-delay="260">
+            <div class="service-icon"><i class="fas fa-rotate-left" aria-hidden="true"></i></div>
+            <h3>Logística Reversa</h3>
+            <p>Transformamos o retorno de produtos em vantagem competitiva. Gestão eficiente de devoluções, com controle, agilidade e custo otimizado.</p>
+            <a class="service-link js-whatsapp-link" href="https://wa.me/5585999211671" target="_blank" rel="noopener" data-message="Olá, Simone! Tenho interesse em logística reversa.">Solicitar orçamento</a>
+          </article>
+
+          <article class="service-card" data-aos="fade-up" data-aos-delay="340">
+            <div class="service-icon"><i class="fas fa-right-left" aria-hidden="true"></i></div>
+            <h3>Cross Docking</h3>
+            <p>Receba, separe e entregue sem perder tempo. Integramos sua cadeia de suprimentos com agilidade e redução de custos logísticos.</p>
+            <a class="service-link js-whatsapp-link" href="https://wa.me/5585999211671" target="_blank" rel="noopener" data-message="Olá, Simone! Tenho interesse em cross docking.">Solicitar orçamento</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="counter-section" id="numbers">
+      <div class="container">
+        <div class="section-title light" data-aos="fade-up">
+          <p class="eyebrow">Estrutura</p>
+          <h2>Os números falam por si</h2>
+        </div>
+        <div class="row text-center g-4 justify-content-center">
+          <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="100">
+            <div class="counter-item">
+              <div class="counter-number" data-count="8">0</div>
+              <div class="counter-text">anos no mercado</div>
             </div>
-            <div class="testimonial-author">
-              <p>- FORTSUN</p>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="200">
+            <div class="counter-item">
+              <div class="counter-number" data-count="1200">0</div>
+              <div class="counter-text">pallets de capacidade</div>
             </div>
+          </div>
+          <!-- <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="300">
+            <div class="counter-item">
+              <div class="counter-number" data-count="55000">0</div>
+              <div class="counter-text">km percorridos por ano</div>
+            </div>
+          </div>
+          <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="400">
+            <div class="counter-item">
+              <div class="counter-number" data-count="15000">0</div>
+              <div class="counter-text">embarques por ano</div>
+            </div>
+          </div> -->
+          <!-- <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="500">
+            <div class="counter-item">
+              <div class="counter-number" data-count="500">0</div>
+              <div class="counter-text">clientes atendidos por ano</div>
+            </div>
+          </div> -->
+
+          <div class="col-6 col-md-4 col-lg-2" data-aos="fade-up" data-aos-delay="500">
+            <div class="counter-item counter-item--anvisa">
+              <!-- Troque o src abaixo pelo caminho da imagem do seu selo. -->
+              <img
+                src="img/certificado_anvisa.PNG"
+                alt="Selo de certificação ANVISA"
+                class="counter-anvisa-seal"
+                width="64"
+                height="64"
+                loading="lazy"
+              >
+              <div class="counter-textAmarelo">Certificado pela Anvisa</div>
+              <div class="counter-text">Certificado</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="partners-section section-spacing" id="partners">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <p class="eyebrow dark">Parcerias</p>
+          <h2>Novas Parceiras</h2>
+        </div>
+        <div class="partners-slider" data-aos="fade-up" aria-label="Parceiros da FORTLOG">
+          <div class="partners-track">
+            <img src="img/parceiras/Prime.png" alt="Prime" loading="lazy">
+            <img src="img/parceiras/NkrLog.png" alt="NKR Logística" loading="lazy">
+            <img src="img/parceiras/conecta-cargo-logo.png" alt="Conecta Cargo" loading="lazy">
+            <img src="img/parceiras/rta-logo.svg" alt="RTALOG Transportes" loading="lazy">
+            <img src="img/parceiras/CaronTransporte.png" alt="CRON Transportes" loading="lazy">
+            <img src="img/parceiras/FedEx.png" alt="FedEx" loading="lazy">
+            <img src="img/parceiras/rta-logo.svg" alt="RTALOG Interfix" loading="lazy">
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contact Section -->
-  <section class="py-5" id="contact">
-    <div class="container py-5">
-      <div class="section-title" data-aos="fade-up">
-        <h2>FALE CONOSCO</h2>
+    <section class="features-section section-spacing" id="diferenciais">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <p class="eyebrow dark">Diferenciais</p>
+          <h2>Operação pensada para sua cadeia logística</h2>
+        </div>
+        <div class="features-grid">
+          <article class="feature-item" data-aos="fade-up" data-aos-delay="100" tabindex="0">
+            <i class="fas fa-map-marked-alt" aria-hidden="true"></i>
+            <h3>Conhecimento completo do Ceará</h3>
+            <p>Conhecemos cada rota, cada necessidade local e cada desafio logístico da região.</p>
+          </article>
+          <article class="feature-item" data-aos="fade-up" data-aos-delay="180" tabindex="0">
+            <i class="fas fa-clock" aria-hidden="true"></i>
+            <h3>Gestão em tempo real</h3>
+            <p>Rastreamento, controle de estoque e performance sempre na palma da mão.</p>
+          </article>
+          <article class="feature-item" data-aos="fade-up" data-aos-delay="260" tabindex="0">
+            <i class="fas fa-headset" aria-hidden="true"></i>
+            <h3>Atendimento consultivo</h3>
+            <p>Você fala com especialistas preparados para entender sua operação.</p>
+          </article>
+          <article class="feature-item" data-aos="fade-up" data-aos-delay="340" tabindex="0">
+            <i class="fas fa-shield-alt" aria-hidden="true"></i>
+            <h3>Segurança operacional</h3>
+            <p>Processos, frota monitorada e armazenagem organizada para proteger cada etapa.</p>
+          </article>
+        </div>
       </div>
-      <div class="row">
-        <div class="col-lg-6 mb-4 mb-lg-0" data-aos="fade-right">
-          <div class="contact-info">
-            <h4 class="mb-4">Informações de Contato</h4>
-            <p class="mb-4"><i class="fas fa-map-marker-alt"></i> Rua Augusta Benevides, 1304, Parque Santa Maria - Fortaleza-CE, 60873-065</p>
-            <p class="mb-4"><i class="fas fa-phone"></i> (85) 99906-4348</p>
-            <p class="mb-4"><i class="fas fa-envelope"></i> Igor@forsat.com.br</p>
-            <div class="social-icons mt-4">
-              <a href="https://instagram.com/fortlogbrasil" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-              <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-              <a href="https://wa.me/5585999064348" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </section>
+
+    <section class="contact-section section-spacing" id="contact">
+      <div class="container">
+        <div class="section-title" data-aos="fade-up">
+          <p class="eyebrow dark">Contato</p>
+          <h2>Solicite seu orçamento</h2>
+        </div>
+        <div class="row g-5">
+          <div class="col-lg-5" data-aos="fade-right">
+            <div class="contact-info-panel">
+              <h3>Informações de Contato</h3>
+              <p><i class="fas fa-phone" aria-hidden="true"></i> (85) 99921-1671</p>
+              <p><i class="fas fa-envelope" aria-hidden="true"></i> comercial@fortlogbrasil.com.br</p>
+              <p><i class="fas fa-globe" aria-hidden="true"></i> www.fortlogbrasil.com.br</p>
+              <p><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Rua Augusta Benevides, 1304, Parque Santa Maria - Fortaleza-CE, 60873-065</p>
+              <div class="social-icons">
+                <a href="https://instagram.com/fortlogbrasil" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+                <a class="js-whatsapp-link" href="https://wa.me/5585999211671" target="_blank" rel="noopener" aria-label="WhatsApp" data-message="Olá, Simone! Gostaria de falar com a FORTLOG."><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-lg-6" data-aos="fade-left">
-          <form id="contact-form">
-            <div class="mb-3">
-              <input type="text" class="form-control" placeholder="Seu Nome" required>
-            </div>
-            <div class="mb-3">
-              <input type="email" class="form-control" placeholder="Seu E-mail" required>
-            </div>
-            <div class="mb-3">
-              <input type="tel" class="form-control" placeholder="Seu Telefone">
-            </div>
-            <div class="mb-3">
-              <select class="form-select">
-                <option selected>Selecione o serviço de interesse</option>
-                <option>Entregas Dedicadas</option>
-                <option>Logística Reversa</option>
-                <option>Cargas Aéreas</option>
-                <option>Armazenagem Inteligente</option>
-                <option>Cross Docking</option>
-                <option>Outros</option>
-              </select>
-            </div>
-            <div class="mb-3">
-              <textarea class="form-control" rows="5" placeholder="Sua Mensagem"></textarea>
-            </div>
-            <button type="submit" class="btn btn-yellow">Enviar Mensagem</button>
-          </form>
+          <div class="col-lg-7" data-aos="fade-left">
+            <form id="contact-form" class="contact-form">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label class="form-label" for="name">Nome</label>
+                  <input type="text" class="form-control" id="name" name="name" placeholder="Seu nome" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="phone">Telefone</label>
+                  <input type="tel" class="form-control" id="phone" name="phone" placeholder="Seu telefone" required>
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="email">E-mail</label>
+                  <input type="email" class="form-control" id="email" name="email" placeholder="seu@email.com">
+                </div>
+                <div class="col-md-6">
+                  <label class="form-label" for="service">Serviço de interesse</label>
+                  <select class="form-select" id="service" name="service">
+                    <option selected>Selecione</option>
+                    <option>Entregas Dedicadas</option>
+                    <option>Armazenagem Inteligente</option>
+                    <option>Logística Reversa</option>
+                    <option>Cross Docking</option>
+                    <option>Armazenagem conforme exigências da ANVISA</option>
+                    <option>Outros</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label" for="message">Mensagem</label>
+                  <textarea class="form-control" id="message" name="message" rows="5" placeholder="Conte rapidamente sua necessidade"></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-yellow">Enviar pelo WhatsApp</button>
+                </div>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
-      <div class="row">
-        <div class="col-lg-4 mb-4 mb-lg-0">
-          <img src="img/cropped-fortlog-horizontal-fort-branco-768x242.png" alt="FORTLOG Logo" class="footer-logo" loading="lazy">
-          <p class="mt-3">Conectamos seu produto ao destino certo, com a agilidade que o mercado exige e a excelência que você merece.</p>
-          <div class="social-icons mt-3">
-            <a href="https://instagram.com/fortlogbrasil" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-            <a href="https://wa.me/5585999064348" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+      <div class="row g-4">
+        <div class="col-lg-4">
+          <img src="img/cropped-fortlog-horizontal-fort-branco-768x242.png" alt="FORTLOG Brasil" class="footer-logo" loading="lazy">
+          <p>Transporte seguro e armazenagem eficiente, com frota monitorada e ampla capacidade de armazenagem, garantindo organização, agilidade e segurança.</p>
+          <div class="social-icons footer-social">
+            <a href="https://instagram.com/fortlogbrasil" target="_blank" rel="noopener" aria-label="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook" aria-hidden="true"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i></a>
+            <a class="js-whatsapp-link" href="https://wa.me/5585999211671" target="_blank" rel="noopener" aria-label="WhatsApp" data-message="Olá, Simone! Gostaria de falar com a FORTLOG."><i class="fab fa-whatsapp" aria-hidden="true"></i></a>
           </div>
         </div>
-        <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+        <div class="col-lg-2 col-md-4">
           <div class="footer-links">
             <h5>Links Rápidos</h5>
             <ul>
               <li><a href="#home">Home</a></li>
-              <li><a href="#about">Sobre</a></li>
-              <li><a href="#services">Serviços</a></li>
-              <li><a href="#numbers">Números</a></li>
+              <li><a href="nossa-historia.html">Nossa História</a></li>
+              <li><a href="#anvisa">Certificação ANVISA</a></li>
+              <li><a href="#services">Portfólio</a></li>
               <li><a href="#contact">Contato</a></li>
             </ul>
           </div>
         </div>
-        <div class="col-lg-3 col-md-4 mb-4 mb-md-0">
+        <div class="col-lg-3 col-md-4">
           <div class="footer-links">
             <h5>Serviços</h5>
             <ul>
-              <li><a href="#">Entregas Dedicadas</a></li>
-              <li><a href="#">Logística Reversa</a></li>
-              <li><a href="#">Cargas Aéreas</a></li>
-              <li><a href="#">Armazenagem</a></li>
-              <li><a href="#">Cross Docking</a></li>
+              <li><a href="#services">Entregas Dedicadas</a></li>
+              <li><a href="#services">Armazenagem Inteligente</a></li>
+              <li><a href="#services">Logística Reversa</a></li>
+              <li><a href="#services">Cross Docking</a></li>
             </ul>
           </div>
         </div>
         <div class="col-lg-3 col-md-4">
           <div class="footer-links">
             <h5>Contato</h5>
-            <ul class="contact-info">
-              <li><i class="fas fa-map-marker-alt"></i> Rua Augusta Benevides, 1304</li>
-              <li><i class="fas fa-phone"></i> (85) 99906-4348</li>
-              <li><i class="fas fa-envelope"></i> Igor@fortsat.com.br</li>
+            <ul class="footer-contact">
+              <li><i class="fas fa-phone" aria-hidden="true"></i> (85) 99921-1671</li>
+              <li><i class="fas fa-envelope" aria-hidden="true"></i> comercial@fortlogbrasil.com.br</li>
+              <li><i class="fas fa-globe" aria-hidden="true"></i> www.fortlogbrasil.com.br</li>
             </ul>
           </div>
         </div>
       </div>
-      <hr class="mt-4 mb-4">
-      <div class="text-center">
-        <p class="mb-0">&copy; 2025 FORTLOG Brasil. Todos os direitos reservados.</p>
-      </div>
+      <hr>
+      <p class="copyright">&copy; 2026 FORTLOG Brasil. Todos os direitos reservados.</p>
     </div>
   </footer>
 
-  <!-- Scripts otimizados -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-  
-  <!-- JavaScript principal -->
   <script src="assets/script.js"></script>
 </body>
 </html>

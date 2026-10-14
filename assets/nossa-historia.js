@@ -1,70 +1,106 @@
-document.addEventListener('DOMContentLoaded', function() {
-      // Inicializa AOS
-      AOS.init({
-        duration: 800,
-        easing: 'ease-in-out',
-        once: true
+document.addEventListener("DOMContentLoaded", function () {
+  const whatsappNumber = "5585999211671";
+
+  if (window.AOS) {
+    AOS.init({
+      duration: 800,
+      easing: "ease-in-out",
+      once: true
+    });
+  }
+
+  document.querySelectorAll(".js-whatsapp-link").forEach(function (link) {
+    const message = link.dataset.message || "Olá, Simone! Gostaria de falar com a FORTLOG.";
+    link.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+    anchor.addEventListener("click", function (event) {
+      const targetSelector = this.getAttribute("href");
+      if (!targetSelector || targetSelector === "#") return;
+
+      const target = document.querySelector(targetSelector);
+      if (!target) return;
+
+      event.preventDefault();
+      const navbar = document.querySelector(".navbar");
+      const scrollOffset = navbar ? navbar.offsetHeight + 24 : 76;
+
+      window.scrollTo({
+        top: target.offsetTop - scrollOffset,
+        behavior: "smooth"
       });
 
-      // Suaviza rolagem para links internos
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            window.scrollTo({
-              top: target.offsetTop - 70,
-              behavior: 'smooth'
-            });
-          }
-        });
-      });
+      const navbarCollapse = document.querySelector(".navbar-collapse.show");
+      if (navbarCollapse && window.bootstrap) {
+        bootstrap.Collapse.getOrCreateInstance(navbarCollapse).hide();
+      }
+    });
+  });
 
-      // Animação do caminhão na estrada com scroll
-      const movingTruck = document.getElementById('movingTruck');
-      const roadContainer = document.querySelector('.road-container');
-      const timelineItems = document.querySelectorAll('.timeline-item-road');
-      
-      // Posição inicial do caminhão
-      movingTruck.style.top = '0px';
-      
-      // Evento de scroll para mover o caminhão
-      window.addEventListener('scroll', function() {
-        const scrollPosition = window.scrollY;
-        const roadSection = document.querySelector('.road-timeline-section');
-        const roadSectionTop = roadSection.offsetTop;
-        const roadSectionHeight = roadSection.offsetHeight;
-        const windowHeight = window.innerHeight;
-        
-        // Verifica se a seção da estrada está visível
-        if (scrollPosition > roadSectionTop - windowHeight && 
-            scrollPosition < roadSectionTop + roadSectionHeight) {
-          
-          // Calcula a posição do caminhão baseada no scroll
-          const scrollPercent = (scrollPosition - roadSectionTop + windowHeight/2) / 
-                                (roadSectionHeight - windowHeight/2);
-          
-          // Limita entre 0 e 1
-          const limitedScrollPercent = Math.min(Math.max(scrollPercent, 0), 1);
-          
-          // Posição do caminhão (90% da altura do container para dar margem)
-          const truckPosition = limitedScrollPercent * (roadContainer.offsetHeight - 100);
-          movingTruck.style.top = `${truckPosition}px`;
-          
-          // Mostra/oculta os itens da linha do tempo conforme o scroll
-          // AUMENTEI a área de visibilidade para que os containers fiquem visíveis por mais tempo
-          timelineItems.forEach(item => {
-            const itemTop = parseInt(item.style.top);
-            // Aumentei a margem de 100px para 200px para os containers ficarem visíveis por mais tempo
-            if (truckPosition > itemTop - 200 && truckPosition < itemTop + 200) {
-              item.classList.add('visible');
-            } else {
-              item.classList.remove('visible');
-            }
-          });
+  const movingTruck = document.getElementById("movingTruck");
+  const roadContainer = document.querySelector(".road-container");
+  const roadSection = document.querySelector(".road-timeline-section");
+  const timelineItems = document.querySelectorAll(".timeline-item-road");
+
+  if (!movingTruck || !roadContainer || !roadSection || !timelineItems.length) return;
+
+  movingTruck.style.top = "0px";
+
+  function moveTruckOnScroll() {
+    const scrollPosition = window.scrollY;
+    const roadSectionTop = roadSection.offsetTop;
+    const roadSectionHeight = roadSection.offsetHeight;
+    const windowHeight = window.innerHeight;
+
+    if (window.innerWidth <= 768) {
+      timelineItems.forEach(function (item) {
+        item.classList.add("visible");
+      });
+      return;
+    }
+
+    if (
+      scrollPosition > roadSectionTop - windowHeight &&
+      scrollPosition < roadSectionTop + roadSectionHeight
+    ) {
+      const scrollPercent =
+        (scrollPosition - roadSectionTop + windowHeight / 2) /
+        (roadSectionHeight - windowHeight / 2);
+      const limitedScrollPercent = Math.min(Math.max(scrollPercent, 0), 1);
+      const truckPosition = limitedScrollPercent * (roadContainer.offsetHeight - 100);
+
+      movingTruck.style.top = `${truckPosition}px`;
+
+      timelineItems.forEach(function (item) {
+        const itemTop = parseInt(item.style.top, 10);
+
+        if (truckPosition > itemTop - 220 && truckPosition < itemTop + 220) {
+          item.classList.add("visible");
+        } else {
+          item.classList.remove("visible");
         }
       });
-      
-      // Forçar verificação inicial para exibir itens visíveis no carregamento
-      window.dispatchEvent(new Event('scroll'));
-    });
+    }
+  }
+
+  let ticking = false;
+
+  window.addEventListener(
+    "scroll",
+    function () {
+      if (ticking) return;
+
+      window.requestAnimationFrame(function () {
+        moveTruckOnScroll();
+        ticking = false;
+      });
+
+      ticking = true;
+    },
+    { passive: true }
+  );
+
+  window.addEventListener("resize", moveTruckOnScroll);
+  moveTruckOnScroll();
+});
